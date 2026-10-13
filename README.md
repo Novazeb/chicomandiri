@@ -1,102 +1,50 @@
-# SINAR DESIGN & BUILD (SDB)
+# Bengkel Las Chico Mandiri
 
-Website profil perusahaan resmi untuk **SINAR DESIGN & BUILD**, penyedia layanan jasa arsitektur, perencanaan tata ruang, desain interior, dan kontraktor konstruksi yang berbasis di Jakarta, Indonesia.
+Website profil & katalog spesialis resmi untuk **Bengkel Las Chico Mandiri**, penyedia jasa bengkel las dan konstruksi besi terpercaya di Medan & Deli Serdang. Spesialis pengerjaan kanopi kaca tempered, pagar minimalis modern, pintu sliding presisi, dan partisi shower tempered bergaransi.
 
-Project ini dibangun dengan arsitektur modern berbasis **Vue 3** dan **Vite**, mengutamakan performa loading cepat, tata letak responsif, serta visual interaktif yang elegan.
-
----
-
-## 🛠️ Teknologi yang Digunakan
-
-- **Vue.js 3 (Composition API / `<script setup>`)**: Framework frontend utama untuk komponen yang modular dan reaktif.
-- **Vite 6**: Build tool generasi baru untuk proses development instan dan bundling aset yang sangat optimal.
-- **Bootstrap (Grid System & Utilities)**: Tata letak responsif untuk tampilan layar desktop, tablet, hingga smartphone.
-- **Swiper Slider**: Animasi slider proyek interaktif di halaman utama (Hero Section).
-- **Owl Carousel**: Carousel multi-item untuk daftar anggota tim, galeri portofolio, dan ulasan testimoni klien.
-- **LightGallery**: Lightbox interaktif untuk visualisasi foto proyek resolusi tinggi dan pemutar video YouTube terintegrasi.
-- **RD Navbar & Core Scripts**: Navigasi sidebar/fixed yang dinamis dan mendukung *smooth scrolling* antar bagian halaman.
-- **Vector Icons**: Material Design Icons (MDI), Linearicons, dan FontAwesome 4.7.
+Project ini dibangun dengan arsitektur modern berbasis **Vue 3** dan **Vite**, mengutamakan performa loading cepat, tata letak responsif, serta integrasi tombol interaktif WhatsApp untuk konsultasi dan survey gratis langsung ke lokasi.
 
 ---
 
-## ✨ Fitur-Fitur Website
+## 🛠️ Informasi Bisnis
 
-1. **Preloader Animasi**: Animasi pemuatan halaman yang halus saat pertama kali dibuka.
-2. **Hero Slider Rancang Bangun**: Showcase proyek unggulan dengan indikator luas area, estimasi, dan navigasi slider.
-3. **Layanan & Form Estimasi Biaya**: Rangkuman layanan (Desain Arsitektur, Desain Interior, Tata Cahaya) disertai formulir konsultasi cepat.
-4. **4 Tahapan Kerja Sistematis**: Tab interaktif yang menjelaskan alur kerja dari konsultasi awal, desain 3D, konstruksi fisik, hingga serah terima kunci.
-5. **Profil Tim & Founder**: Daftar arsitek dan tenaga ahli di balik Sinar Design & Build, lengkap dengan tautan media sosial dan email.
-6. **Statistik & Video Lightbox**: Ringkasan pencapaian (jumlah proyek, tahun pengalaman) serta preview video profil perusahaan.
-7. **Portofolio Proyek Terpilih**: Galeri karya arsitektur di wilayah Jakarta yang dapat diperbesar dengan fitur zoom dan fullscreen.
-8. **Edukasi & Artikel**: Tips seputar tren arsitektur tropis, panduan RAB bangunan, dan panduan konstruksi.
-9. **Testimoni Klien**: Ulasan asli dari pemilik properti dan pengusaha di Jakarta.
-10. **Kontak & Integrasi WhatsApp**: Tombol dan formulir kontak yang langsung terhubung ke email dan nomor WhatsApp resmi.
+- **Nama Usaha:** Bengkel Las Chico Mandiri
+- **Lokasi Bisnis:** Jl. Roso No. 8, Deli Tua – Marendal, Medan
+- **WhatsApp:** 0813-7693-3039
+- **Jam Operasional:** Senin – Sabtu (08.00 – 17.30 WIB)
+- **Cakupan Wilayah:** Medan & Deli Serdang
 
 ---
 
-## 📂 Struktur Direktori
+## 🌟 5 Struktur Section Utama (Sesuai PRD)
 
-```text
-sinardesignandbuilding/
-├── public/               # Aset statis publik (gambar, font ikon, stylesheet, script legacy)
-│   ├── css/
-│   ├── fonts/
-│   ├── images/
-│   └── js/
-├── src/
-│   ├── components/       # Komponen Vue modular
-│   │   ├── AboutSection.vue
-│   │   ├── AppFooter.vue
-│   │   ├── AppHeader.vue
-│   │   ├── AwardsSection.vue
-│   │   ├── BlogSection.vue
-│   │   ├── ContactSection.vue
-│   │   ├── HeroSection.vue
-│   │   ├── PortfolioSection.vue
-│   │   ├── Preloader.vue
-│   │   ├── ProcessSection.vue
-│   │   ├── TeamSection.vue
-│   │   └── TestimonialsSection.vue
-│   ├── App.vue           # Root component
-│   └── main.js           # Entry point Vue 3
-├── index.html            # File HTML utama
-├── package.json          # Manajemen dependensi dan script npm
-├── vite.config.js        # Konfigurasi bundler Vite
-└── README.md
-```
+1. **Hero Section**: Headline konstruksi besi kokoh & estetik Medan, banner kanopi kaca tempered (`atap 1.jpg`), tombol CTA WhatsApp & scroll portofolio.
+2. **3 Nilai Jual Utama (Trust Badges)**:
+   - *Material Berkualitas* (Besi hollow galvanis anti-karat & kaca tempered SNI)
+   - *Gratis Survey Lokasi* (Layanan ukur gratis Medan & Deli Serdang)
+   - *Garansi Struktur* (Jaminan kekuatan konstruksi & kerapian hasil las)
+3. **Katalog Layanan (4 Spesialisasi Unggulan)**:
+   - Kanopi Kaca & Modern (`atap 1.jpg`)
+   - Pagar & Tralis Minimalis (`pagar 1.jpg`)
+   - Pintu Sliding & Besi Tempa (`pintu 1.webp`)
+   - Partisi Kaca Shower (`shower 2.webp`)
+4. **Galeri Proyek (Foto Asli)**:
+   - Proyek Kanopi & Pagar Hunian Minimalis (`pagar 2.jpg`, `pagar 3.webp`)
+   - Galeri Proyek Interior/Kaca (`shower 1.jpg`)
+5. **Footer & Kontak**:
+   - Alamat lengkap, pin Google Maps, nomor WhatsApp, jam operasional, dan footer credit resmi.
 
 ---
 
-## 🚀 Cara Menjalankan Project
+## 🚀 Menjalankan Project
 
-### 1. Prasyarat
-Pastikan Anda sudah menginstal [Node.js](https://nodejs.org/) (versi 18 ke atas disarankan).
-
-### 2. Instalasi Dependensi
-Jalankan perintah berikut di terminal:
 ```bash
-npm install
-```
-
-### 3. Menjalankan Server Development
-```bash
+# Jalankan development server
 npm run dev
-```
-Buka browser di alamat `http://localhost:3000`.
 
-### 4. Build untuk Produksi
-Untuk menghasilkan file statis yang siap di-deploy ke server/hosting (Vercel, Netlify, cPanel, dll):
-```bash
+# Build untuk produksi (Vercel / Hosting)
 npm run build
-```
-File hasil build akan berada di dalam folder `dist/`.
 
-### 5. Preview Hasil Build
-```bash
+# Preview build produksi lokal
 npm run preview
 ```
-
----
-
-**Designed & Developed by Nova**
-

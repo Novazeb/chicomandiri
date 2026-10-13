@@ -1,0 +1,469 @@
+:root {
+  --card: #ffffff;
+  --ring: #3b82f6;
+  --input: #e5e7eb;
+  --muted: #f9fafb;
+  --accent: #e0f2fe;
+  --border: #e5e7eb;
+  --radius: 0.375rem;
+  --chart-1: #3b82f6;
+  --chart-2: #2563eb;
+  --chart-3: #1d4ed8;
+  --chart-4: #1e40af;
+  --chart-5: #1e3a8a;
+  --popover: #ffffff;
+  --primary: #3b82f6;
+  --sidebar: #f9fafb;
+  --font-mono: JetBrains Mono, monospace;
+  --font-sans: Inter, sans-serif;
+  --secondary: #f3f4f6;
+  --background: #ffffff;
+  --font-serif: Source Serif 4, serif;
+  --foreground: #333333;
+  --destructive: #ef4444;
+  --sidebar-ring: #3b82f6;
+  --sidebar-accent: #e0f2fe;
+  --sidebar-border: #e5e7eb;
+  --card-foreground: #333333;
+  --sidebar-primary: #3b82f6;
+  --muted-foreground: #6b7280;
+  --accent-foreground: #1e3a8a;
+  --popover-foreground: #333333;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #333333;
+  --secondary-foreground: #4b5563;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #1e3a8a;
+  --sidebar-primary-foreground: #ffffff;
+
+  /* Aliases & helper mappings */
+  --primary-color: var(--primary);
+  --primary-hover: var(--chart-2);
+  --clean-bg: var(--background);
+}
+
+.dark {
+  --card: #262626;
+  --ring: #3b82f6;
+  --input: #404040;
+  --muted: #1f1f1f;
+  --accent: #1e3a8a;
+  --border: #404040;
+  --radius: 0.375rem;
+  --chart-1: #60a5fa;
+  --chart-2: #3b82f6;
+  --chart-3: #2563eb;
+  --chart-4: #1d4ed8;
+  --chart-5: #1e40af;
+  --popover: #262626;
+  --primary: #3b82f6;
+  --sidebar: #171717;
+  --secondary: #262626;
+  --background: #171717;
+  --foreground: #e5e5e5;
+  --destructive: #ef4444;
+  --sidebar-ring: #3b82f6;
+  --sidebar-accent: #1e3a8a;
+  --sidebar-border: #404040;
+  --card-foreground: #e5e5e5;
+  --sidebar-primary: #3b82f6;
+  --muted-foreground: #a3a3a3;
+  --accent-foreground: #bfdbfe;
+  --popover-foreground: #e5e5e5;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #e5e5e5;
+  --secondary-foreground: #e5e5e5;
+  --destructive-foreground: #ffffff;
+  --sidebar-accent-foreground: #bfdbfe;
+  --sidebar-primary-foreground: #ffffff;
+}
+
+@theme inline {
+  --color-card: var(--card);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-radius: var(--radius);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-popover: var(--popover);
+  --color-primary: var(--primary);
+  --color-sidebar: var(--sidebar);
+  --color-font-mono: var(--font-mono);
+  --color-font-sans: var(--font-sans);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-font-serif: var(--font-serif);
+  --color-foreground: var(--foreground);
+  --color-destructive: var(--destructive);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-card-foreground: var(--card-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+}
+
+/* 1. Global Reset & Modern Minimal Typography */
+*, *::before, *::after {
+  text-shadow: none !important;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: var(--foreground);
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Suppress all obsolete status bars and template counters */
+.ie-panel,
+.snackbars,
+.project-modern-counter,
+.badge-cobalt,
+.badge-status {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* 2. Color Utility Tokens */
+.bg-background {
+  background-color: var(--background) !important;
+}
+
+.bg-card {
+  background-color: var(--card) !important;
+}
+
+.bg-muted {
+  background-color: var(--muted) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+.text-foreground {
+  color: var(--foreground) !important;
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground) !important;
+}
+
+.text-primary, .text-blue-600 {
+  color: var(--primary) !important;
+}
+
+.text-accent-foreground {
+  color: var(--accent-foreground) !important;
+}
+
+.border-border {
+  border-color: var(--border) !important;
+}
+
+/* 3. Modern Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans), sans-serif !important;
+  color: var(--foreground);
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+/* 4. Modern Clean Minimal Navbar (Light & Crisp) */
+.rd-navbar-wrap {
+  position: relative;
+  z-index: 1080;
+}
+
+.rd-navbar-fixed .rd-navbar-panel {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 18px !important;
+  height: 64px !important;
+  background: var(--background) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+  z-index: 1085 !important;
+}
+
+.rd-navbar-fixed .rd-navbar-brand,
+.rd-navbar-sidebar .rd-navbar-brand,
+.rd-navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  font-size: 14px !important;
+  line-height: normal !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+
+.brand-logo-container {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+.brand-logo-img {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  object-fit: contain !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  flex-shrink: 0 !important;
+}
+
+.brand-text-wrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  text-align: left !important;
+  line-height: 1.2 !important;
+}
+
+.brand-title {
+  display: block !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 15px !important;
+  letter-spacing: -0.01em !important;
+  color: var(--foreground) !important;
+  line-height: 1.2 !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.brand-subtitle {
+  display: block !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 9px !important;
+  letter-spacing: 0.5px !important;
+  color: var(--primary) !important;
+  text-transform: uppercase !important;
+  line-height: 1.2 !important;
+  margin: 0 !important;
+}
+
+/* Minimalist Hamburger Toggle in Dark Neutral */
+.rd-navbar-toggle span,
+.rd-navbar-toggle span::before,
+.rd-navbar-toggle span::after {
+  background-color: var(--foreground) !important;
+}
+
+/* Mobile Sidebar Drawer (Starts right below 64px header, light & minimal) */
+.rd-navbar-fixed .rd-navbar-nav-wrap {
+  position: fixed !important;
+  left: 0 !important;
+  top: 64px !important;
+  bottom: 0 !important;
+  height: calc(100vh - 64px) !important;
+  width: 275px !important;
+  max-width: 85vw !important;
+  z-index: 1084 !important;
+  background: var(--sidebar) !important;
+  border-right: 1px solid var(--sidebar-border) !important;
+  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.06) !important;
+  padding: 16px 0 28px 0 !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+.rd-navbar-fixed .rd-navbar-nav {
+  padding: 0 12px !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+.rd-navbar-fixed .rd-nav-item {
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+.rd-navbar-fixed .rd-nav-link {
+  display: block !important;
+  color: var(--sidebar-foreground) !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  padding: 10px 16px !important;
+  border-radius: var(--radius) !important;
+  transition: all 0.15s ease !important;
+  text-decoration: none !important;
+}
+
+.rd-navbar-fixed .rd-nav-item.active .rd-nav-link,
+.rd-navbar-fixed .rd-nav-link:hover {
+  color: var(--sidebar-accent-foreground) !important;
+  background: var(--sidebar-accent) !important;
+  font-weight: 600 !important;
+}
+
+.rd-navbar-fixed .contacts-classic {
+  padding: 16px 20px 0 !important;
+  margin-top: 14px !important;
+  border-top: 1px solid var(--sidebar-border) !important;
+}
+
+.contacts-classic-text {
+  font-family: var(--font-sans), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  color: var(--primary) !important;
+  text-decoration: none !important;
+}
+
+/* 5. Minimalist Clean Buttons (shadcn standard) */
+.button-primary,
+.button-primary:active,
+.button-primary:focus {
+  background-color: var(--primary) !important;
+  border: 1px solid var(--primary) !important;
+  color: var(--primary-foreground) !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: -0.01em !important;
+  padding: 10px 20px !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+  transition: all 0.15s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.button-primary:hover {
+  background-color: var(--chart-2) !important;
+  border-color: var(--chart-2) !important;
+  color: var(--primary-foreground) !important;
+  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.25) !important;
+}
+
+.button-primary-outline {
+  color: var(--foreground) !important;
+  border: 1px solid var(--border) !important;
+  background-color: var(--background) !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  letter-spacing: -0.01em !important;
+  padding: 10px 18px !important;
+  border-radius: var(--radius) !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.15s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.button-primary-outline:hover {
+  background-color: var(--secondary) !important;
+  border-color: #d1d5db !important;
+  color: var(--foreground) !important;
+}
+
+/* Suppress obsolete lines */
+.button-jerry-line {
+  display: none !important;
+}
+
+/* 6. Form Fields (Clean Minimalist Input) */
+.form-wrap {
+  position: relative !important;
+  margin-bottom: 16px !important;
+  text-align: left !important;
+}
+
+.form-wrap .form-label {
+  position: static !important;
+  transform: none !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--foreground) !important;
+  opacity: 1 !important;
+  line-height: 1.3 !important;
+}
+
+.form-wrap .form-input {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  height: 42px !important;
+  padding: 10px 14px !important;
+  background: var(--background) !important;
+  border: 1px solid var(--input) !important;
+  border-radius: var(--radius) !important;
+  color: var(--foreground) !important;
+  font-size: 14px !important;
+  font-family: var(--font-sans), sans-serif !important;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-wrap .form-input:focus {
+  border-color: var(--ring) !important;
+  outline: none !important;
+  background: var(--background) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
+}
+
+.form-wrap .form-input::placeholder {
+  color: var(--muted-foreground) !important;
+  font-size: 13px !important;
+}
+
+/* 7. Section Padding System */
+.section-xl {
+  padding: 72px 0;
+}
+
+.section-lg {
+  padding: 60px 0;
+}
+
+@media (max-width: 767px) {
+  .section-xl {
+    padding: 48px 0;
+  }
+  .section-lg {
+    padding: 40px 0;
+  }
+}

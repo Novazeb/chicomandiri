@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 84" width="350" height="84">
+  <defs>
+    <linearGradient id="chicoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2B889"/>
+      <stop offset="50%" stop-color="#C4956A"/>
+      <stop offset="100%" stop-color="#9E6F45"/>
+    </linearGradient>
+    <linearGradient id="chicoSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#D1D5DB"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Welding / Steel Structural Monogram (Hexagon + Flame/Cross Sparks) -->
+  <g transform="translate(10, 8)">
+    <!-- Hexagonal Steel Nut / Beam Frame -->
+    <path d="M 34 2 L 64 19 L 64 51 L 34 68 L 4 51 L 4 19 Z" fill="none" stroke="url(#chicoGold)" stroke-width="2.5" stroke-linejoin="round"/>
+    
+    <!-- Welding Torch Spark & Steel Diamond -->
+    <path d="M 34 14 L 50 34 L 34 54 L 18 34 Z" fill="none" stroke="url(#chicoGold)" stroke-width="1.8"/>
+    <circle cx="34" cy="34" r="5" fill="url(#chicoGold)"/>
+    <path d="M 34 8 L 34 20" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 34 48 L 34 60" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 8 34 L 20 34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 48 34 L 60 34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <!-- Main Name: CHICO MANDIRI -->
+  <text x="88" y="41" font-family="'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="800" font-size="24" fill="url(#chicoSteel)" letter-spacing="2.5">CHICO MANDIRI</text>
+  
+  <!-- Accent Line -->
+  <line x1="88" y1="48" x2="335" y2="48" stroke="url(#chicoGold)" stroke-width="1.5" stroke-opacity="0.8"/>
+
+  <!-- Subtitle: BENGKEL LAS & KONSTRUKSI -->
+  <text x="89" y="64" font-family="'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-weight="600" font-size="10.5" fill="url(#chicoGold)" letter-spacing="3.2">BENGKEL LAS &amp; KONSTRUKSI</text>
+</svg>

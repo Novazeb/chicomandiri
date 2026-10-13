@@ -1,36 +1,127 @@
 <template>
-  <footer class="section novi-background bg-cover section-sm footer-classic context-dark" id="contacts">
-    <div class="container">
-      <a class="brand wow blurIn" href="index.html">
-        <img src="/images/logo-sdb-vertical.svg" alt="SINAR DESIGN &amp; BUILD" width="54" height="63"/>
+  <footer class="site-footer bg-muted" id="footer">
+    <div class="container text-center">
+      <a class="footer-brand d-inline-flex align-items-center justify-content-center" href="#home">
+        <img src="/images/chico/logo.png" alt="Bengkel Las Chico Mandiri" class="footer-logo-img"/>
+        <div class="text-left footer-brand-text">
+          <div class="footer-brand-title">CHICO MANDIRI</div>
+          <div class="footer-brand-sub">Metal Works &bull; Alumunium &bull; Glass &bull; Laser Cutting Art</div>
+        </div>
       </a>
-      <ul class="contacts-modern footer-classic-list">
-        <li class="wow fadeInLeft"><a class="heading-3" href="tel:+6281218939696">+62 812-1893-9696</a></li>
-        <li class="wow fadeInRight"><a class="heading-3" href="mailto:novaberkatsyukurzebua@gmail.com">novaberkatsyukurzebua@gmail.com</a></li>
-      </ul>
-      <div class="footer-location wow fadeInUp" style="color: #c4956a; font-size: 15px; letter-spacing: 2px; margin-bottom: 20px;">
-        <span class="mdi mdi-map-marker" style="margin-right: 5px;"></span>JAKARTA, INDONESIA
+
+      <!-- Kontak WA & Alamat Saja -->
+      <div class="footer-contact-info">
+        <div class="footer-contact-item">
+          <a class="footer-wa-link" href="https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20konsultasi%20pembuatan%20kanopi/pagar" target="_blank" rel="noopener noreferrer">
+            <span class="fa-brands fa-whatsapp text-primary"></span>
+            <strong>WhatsApp:</strong> 0813-7693-3039
+          </a>
+        </div>
+
+        <div class="footer-contact-item">
+          <a class="footer-address-link" href="https://maps.google.com/?q=Jl.+Roso+No.+8,+Deli+Tua+-+Marendal,+Medan" target="_blank" rel="noopener noreferrer">
+            <span class="fa-solid fa-location-dot text-primary"></span>
+            <strong>Alamat:</strong> Jl. Roso No. 8, Deli Tua – Marendal, Medan
+          </a>
+        </div>
       </div>
-      <ul class="list-inline list-inline-xxl list-social footer-classic-list">
-        <li><a class="icon novi-icon mdi mdi-instagram" href="https://instagram.com/zebua_1011" target="_blank" title="Instagram: @zebua_1011"></a></li>
-        <li><a class="icon novi-icon mdi mdi-whatsapp" href="https://wa.me/6281218939696" target="_blank" title="WhatsApp: +6281218939696"></a></li>
-        <li><a class="icon novi-icon mdi mdi-email" href="mailto:novaberkatsyukurzebua@gmail.com" title="Email: novaberkatsyukurzebua@gmail.com"></a></li>
-      </ul>
-      <p class="rights">
-        <span>&copy;&nbsp;</span>
-        <span class="copyright-year">{{ currentYear }}</span>
-        <span>&nbsp;</span>
-        <span>SINAR DESIGN &amp; BUILD</span>
-        <span>. Hak Cipta Dilindungi.</span>
-        <span> Design&nbsp;by&nbsp;<strong>Nova</strong></span>
-      </p>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { computed } from 'vue'
-
-const currentYear = computed(() => new Date().getFullYear())
 </script>
 
+<style scoped>
+.site-footer {
+  background-color: var(--muted);
+  padding: 40px 0 36px;
+  border-top: 1px solid var(--border);
+  color: var(--foreground);
+}
+
+.footer-brand {
+  gap: 12px;
+  text-decoration: none;
+  margin-bottom: 22px;
+}
+
+.footer-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.footer-brand-title {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+  line-height: 1.2;
+}
+
+.footer-brand-sub {
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 600;
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-wa-link,
+.footer-address-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  line-height: 1.5;
+}
+
+.footer-wa-link:hover,
+.footer-address-link:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.footer-wa-link strong,
+.footer-address-link strong {
+  color: var(--foreground);
+}
+
+@media (max-width: 575px) {
+  .site-footer {
+    padding: 32px 0 28px;
+  }
+
+  .footer-wa-link,
+  .footer-address-link {
+    font-size: 13px;
+    text-align: center;
+  }
+}
+</style>

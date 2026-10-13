@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 130" width="140" height="130">
+  <defs>
+    <linearGradient id="chicoGoldV" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2B889"/>
+      <stop offset="50%" stop-color="#C4956A"/>
+      <stop offset="100%" stop-color="#9E6F45"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Welding / Steel Structural Monogram -->
+  <g transform="translate(36, 6)">
+    <path d="M 34 2 L 64 19 L 64 51 L 34 68 L 4 51 L 4 19 Z" fill="none" stroke="url(#chicoGoldV)" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M 34 14 L 50 34 L 34 54 L 18 34 Z" fill="none" stroke="url(#chicoGoldV)" stroke-width="1.8"/>
+    <circle cx="34" cy="34" r="5" fill="url(#chicoGoldV)"/>
+    <path d="M 34 8 L 34 20" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 34 48 L 34 60" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 8 34 L 20 34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 48 34 L 60 34" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <text x="70" y="98" font-family="'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">CHICO MANDIRI</text>
+  <text x="70" y="115" font-family="'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif" font-weight="600" font-size="9" fill="url(#chicoGoldV)" text-anchor="middle" letter-spacing="2.5">BENGKEL LAS</text>
+</svg>

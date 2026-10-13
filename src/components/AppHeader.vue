@@ -9,8 +9,12 @@
             <div class="rd-navbar-panel">
               <!-- RD Navbar Brand-->
               <div class="rd-navbar-brand">
-                <a class="brand" href="index.html">
-                  <img src="/images/logo-sdb.svg" alt="SINAR DESIGN &amp; BUILD" width="169" height="42"/>
+                <a class="brand brand-logo-container" href="index.html">
+                  <img src="/images/chico/logo.png" alt="Bengkel Las Chico Mandiri" class="brand-logo-img"/>
+                  <div class="brand-text-wrapper">
+                    <span class="brand-title">CHICO MANDIRI</span>
+                    <span class="brand-subtitle">Metal Works &amp; Glass</span>
+                  </div>
                 </a>
               </div>
               <!-- RD Navbar Toggle-->
@@ -21,15 +25,17 @@
                 <!-- RD Navbar Nav-->
                 <ul class="rd-navbar-nav">
                   <li class="rd-nav-item active"><a class="rd-nav-link" href="#home">Beranda</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="#about">Tentang Kami</a></li>
-                  <li class="rd-nav-item"><a class="rd-nav-link" href="#team">Tim Kami</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="#about">Keunggulan</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Layanan</a></li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#portfolio">Portofolio</a></li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Kontak</a></li>
                 </ul>
                 <div class="contacts-classic">
                   <div class="unit align-items-center">
-                    <div class="unit-left"><span class="icon novi-icon mdi mdi-cellphone"></span></div>
-                    <div class="unit-body"><a class="contacts-classic-text" href="tel:+6281218939696">+62 812-1893-9696</a></div>
+                    <div class="unit-left"><span class="icon novi-icon fa-brands fa-whatsapp text-primary"></span></div>
+                    <div class="unit-body">
+                      <a class="contacts-classic-text text-primary" href="https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20konsultasi%20pembuatan%20kanopi/pagar" target="_blank" rel="noopener noreferrer">0813-7693-3039</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -43,4 +49,3 @@
 
 <script setup>
 </script>
-

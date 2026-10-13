@@ -1,50 +1,30 @@
 <template>
   <div>
-    <div class="ie-panel">
-      <a href="http://windows.microsoft.com/en-US/internet-explorer/">
-        <img src="/images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
-      </a>
-    </div>
-
     <!-- Preloader -->
     <Preloader />
 
     <div class="page">
-      <!-- Page Header -->
+      <!-- Header & Navigation -->
       <AppHeader />
 
-      <!-- Hero Section / Horace Slider -->
+      <!-- Section 1: Hero Section -->
       <HeroSection />
 
-      <!-- About Section -->
+      <!-- Section 2: 3 Nilai Jual Utama (Trust Badges) & Estimasi -->
       <AboutSection />
 
-      <!-- 4 Steps / Process Section -->
+      <!-- Section 3: Katalog Layanan (4 Kartu / Spesialisasi) -->
       <ProcessSection />
 
-      <!-- Team Section -->
-      <TeamSection />
-
-      <!-- Awards & Counters Section -->
-      <AwardsSection />
-
-      <!-- Portfolio Section -->
+      <!-- Section 4: Galeri Proyek (Foto Asli Mereka) -->
       <PortfolioSection />
 
-      <!-- Latest Blog Posts Section -->
-      <BlogSection />
-
-      <!-- Testimonials & Clients Section -->
-      <TestimonialsSection />
-
-      <!-- Contact / Get in touch Section -->
+      <!-- Section 5: Kontak & Lokasi -->
       <ContactSection />
 
-      <!-- Footer -->
+      <!-- Section 5: Footer -->
       <AppFooter />
     </div>
-
-    <div class="snackbars" id="form-output-global"></div>
   </div>
 </template>
 
@@ -55,11 +35,7 @@ import AppHeader from './components/AppHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ProcessSection from './components/ProcessSection.vue'
-import TeamSection from './components/TeamSection.vue'
-import AwardsSection from './components/AwardsSection.vue'
 import PortfolioSection from './components/PortfolioSection.vue'
-import BlogSection from './components/BlogSection.vue'
-import TestimonialsSection from './components/TestimonialsSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import AppFooter from './components/AppFooter.vue'
 
