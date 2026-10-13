@@ -16,7 +16,7 @@
       >
         <div class="rd-navbar-main-outer">
           <div class="rd-navbar-main">
-            <!-- RD Navbar Panel-->
+            <!-- RD Navbar Panel: Logo on left, Toggle on right (No overlapping button) -->
             <div class="rd-navbar-panel">
               <!-- RD Navbar Brand-->
               <div class="rd-navbar-brand">
@@ -29,19 +29,8 @@
                 </a>
               </div>
 
-              <!-- Header Right Actions: Quick Desktop/Tablet WA button + Hamburger Toggle -->
-              <div class="header-right-actions">
-                <a 
-                  class="button button-primary header-wa-btn d-none d-md-inline-flex" 
-                  href="https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20konsultasi%20pembuatan%20kanopi/pagar" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <span class="fa-brands fa-whatsapp"></span>
-                  <span>Konsultasi via WA</span>
-                </a>
-                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-              </div>
+              <!-- RD Navbar Toggle-->
+              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
             </div>
 
             <!-- Slide-out Drawer Navigation -->
@@ -77,16 +66,4 @@
 </script>
 
 <style scoped>
-.header-right-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header-wa-btn {
-  padding: 8px 16px !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  border-radius: var(--radius) !important;
-}
 </style>
