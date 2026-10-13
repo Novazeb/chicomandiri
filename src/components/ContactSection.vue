@@ -138,7 +138,7 @@
               <div class="form-submit-wrap">
                 <button class="button button-primary form-submit-btn" type="submit">
                   <span class="fa-brands fa-whatsapp"></span>
-                  <span>Kirim Konsultasi via WhatsApp</span>
+                  <span>Konsultasi via WA</span>
                 </button>
               </div>
 

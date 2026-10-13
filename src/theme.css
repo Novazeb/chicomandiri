@@ -467,3 +467,28 @@ h1, h2, h3, h4, h5, h6 {
     padding: 40px 0;
   }
 }
+
+/* 8. Cross-Device Responsiveness (Mobile, Tablet, Desktop) */
+html, body, .page {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Ensure smooth touch interactions on mobile & tablet */
+@media (max-width: 991px) {
+  .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}

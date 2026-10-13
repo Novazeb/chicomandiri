@@ -2,7 +2,18 @@
   <header class="section novi-background bg-cover page-header" id="home">
     <!-- RD Navbar-->
     <div class="rd-navbar-wrap">
-      <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-sidebar" data-xl-device-layout="rd-navbar-sidebar" data-xxl-layout="rd-navbar-sidebar" data-xxl-device-layout="rd-navbar-sidebar" data-xl-stick-up-offset="400" data-xxl-stick-up-offset="400">
+      <nav 
+        class="rd-navbar" 
+        data-layout="rd-navbar-fixed" 
+        data-sm-layout="rd-navbar-fixed" 
+        data-md-layout="rd-navbar-fixed" 
+        data-lg-layout="rd-navbar-fixed" 
+        data-lg-device-layout="rd-navbar-fixed" 
+        data-xl-layout="rd-navbar-fixed" 
+        data-xl-device-layout="rd-navbar-fixed" 
+        data-xxl-layout="rd-navbar-fixed" 
+        data-xxl-device-layout="rd-navbar-fixed"
+      >
         <div class="rd-navbar-main-outer">
           <div class="rd-navbar-main">
             <!-- RD Navbar Panel-->
@@ -17,9 +28,23 @@
                   </div>
                 </a>
               </div>
-              <!-- RD Navbar Toggle-->
-              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+
+              <!-- Header Right Actions: Quick Desktop/Tablet WA button + Hamburger Toggle -->
+              <div class="header-right-actions">
+                <a 
+                  class="button button-primary header-wa-btn d-none d-md-inline-flex" 
+                  href="https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20konsultasi%20pembuatan%20kanopi/pagar" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  <span class="fa-brands fa-whatsapp"></span>
+                  <span>Konsultasi via WA</span>
+                </a>
+                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+              </div>
             </div>
+
+            <!-- Slide-out Drawer Navigation -->
             <div class="rd-navbar-main-element">
               <div class="rd-navbar-nav-wrap">
                 <!-- RD Navbar Nav-->
@@ -30,6 +55,7 @@
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#portfolio">Portofolio</a></li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Kontak</a></li>
                 </ul>
+
                 <div class="contacts-classic">
                   <div class="unit align-items-center">
                     <div class="unit-left"><span class="icon novi-icon fa-brands fa-whatsapp text-primary"></span></div>
@@ -49,3 +75,18 @@
 
 <script setup>
 </script>
+
+<style scoped>
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-wa-btn {
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: var(--radius) !important;
+}
+</style>

@@ -64,7 +64,7 @@
                 rel="noopener noreferrer"
               >
                 <span class="fa-brands fa-whatsapp"></span>
-                <span>Konsultasi {{ currentService.name }} via WA</span>
+                <span>Konsultasi via WA</span>
               </a>
             </div>
           </div>

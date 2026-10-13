@@ -85,7 +85,7 @@
                   rel="noopener noreferrer"
                 >
                   <span class="fa-brands fa-whatsapp"></span>
-                  <span>Tanya Model Ini via WA</span>
+                  <span>Konsultasi via WA</span>
                 </a>
               </div>
             </div>

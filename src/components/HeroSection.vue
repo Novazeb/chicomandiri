@@ -24,10 +24,7 @@
               rel="noopener noreferrer"
             >
               <span class="fa-brands fa-whatsapp" style="font-size: 16px;"></span>
-              <span>Konsultasi WhatsApp</span>
-            </a>
-            <a class="button button-primary-outline hero-btn-sub" href="#portfolio">
-              <span>Lihat Portofolio</span>
+              <span>Konsultasi via WA</span>
             </a>
           </div>
 
