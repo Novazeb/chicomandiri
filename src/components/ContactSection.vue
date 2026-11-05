@@ -188,23 +188,29 @@ function submitContactToWa() {
   row-gap: 28px;
 }
 
-/* Left Workshop Card */
+/* Left Workshop Card - Apple Squircle & Ambient Depth */
 .workshop-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s var(--spring-damp), transform 0.3s var(--spring-damp);
+}
+
+.workshop-card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .workshop-photo-wrap {
   width: 100%;
-  height: 220px;
+  height: 230px;
   overflow: hidden;
   background: var(--secondary);
+  position: relative;
 }
 
 .workshop-photo {
@@ -212,10 +218,15 @@ function submitContactToWa() {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s var(--spring-damp);
+}
+
+.workshop-card:hover .workshop-photo {
+  transform: scale(1.03);
 }
 
 .workshop-content {
-  padding: 30px 26px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -223,31 +234,34 @@ function submitContactToWa() {
 
 .workshop-header-wrap {
   text-align: center;
+  margin-bottom: 24px;
 }
 
 .workshop-title {
   color: var(--foreground);
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 4px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 6px;
   text-align: center;
 }
 
 .workshop-tagline {
   color: var(--primary);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 22px;
+  margin-bottom: 0;
   text-align: center;
 }
 
 .workshop-meta-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-bottom: 24px;
+  gap: 22px;
+  margin-bottom: 28px;
 }
 
 .workshop-meta-item {
@@ -255,22 +269,27 @@ function submitContactToWa() {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .meta-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  border-radius: var(--radius);
-  background: var(--accent);
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  border-radius: 14px;
+  background: rgba(0, 113, 227, 0.08);
   color: var(--primary);
-  border: 1px solid #bae6fd;
+  border: 1px solid rgba(0, 113, 227, 0.16);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 17px;
   margin: 0 auto;
+  transition: transform 0.2s var(--spring-bounce);
+}
+
+.workshop-meta-item:hover .meta-icon {
+  transform: scale(1.08);
 }
 
 .meta-text {
@@ -278,11 +297,15 @@ function submitContactToWa() {
   color: var(--muted-foreground);
   line-height: 1.55;
   text-align: center;
+  max-width: 380px;
 }
 
 .meta-text strong {
   color: var(--foreground);
   display: block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   margin-bottom: 2px;
 }
 
@@ -290,29 +313,40 @@ function submitContactToWa() {
   color: var(--primary);
   font-weight: 600;
   text-decoration: none;
+  transition: opacity 0.15s ease;
 }
 
 .meta-link:hover {
   text-decoration: underline;
+  opacity: 0.85;
 }
 
 .workshop-actions {
   margin-top: auto;
 }
 
-/* Right Form Card */
+/* Right Form Card - Apple Elevated Surface */
 .form-container-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
+  border-radius: var(--radius-xl);
+  padding: 34px 30px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s var(--spring-damp);
+}
+
+.form-container-card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 @media (max-width: 575px) {
+  .workshop-content {
+    padding: 26px 20px;
+  }
+
   .form-container-card {
     padding: 26px 20px;
   }
@@ -320,20 +354,22 @@ function submitContactToWa() {
 
 .form-card-title {
   color: var(--foreground);
-  font-size: 20px;
-  font-weight: 800;
-  margin-bottom: 4px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 6px;
 }
 
 .form-card-subtitle {
   color: var(--muted-foreground);
   font-size: 13.5px;
-  line-height: 1.6;
-  margin-bottom: 22px;
+  line-height: 1.55;
+  margin-bottom: 24px;
 }
 
 .form-submit-wrap {
-  margin-top: 10px;
+  margin-top: 14px;
   margin-bottom: 14px;
 }
 
@@ -346,6 +382,9 @@ function submitContactToWa() {
   text-align: center;
   font-size: 12px;
   color: var(--muted-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 767px) {

@@ -35,7 +35,7 @@
 <style scoped>
 .site-footer {
   background-color: var(--muted);
-  padding: 40px 0 36px;
+  padding: 48px 0 42px;
   border-top: 1px solid var(--border);
   color: var(--foreground);
 }
@@ -43,22 +43,28 @@
 .footer-brand {
   gap: 12px;
   text-decoration: none;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
+  transition: opacity 0.2s var(--spring-damp);
+}
+
+.footer-brand:active {
+  transform: scale(0.98);
+  opacity: 0.8;
 }
 
 .footer-logo-img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   object-fit: contain;
-  border-radius: var(--radius);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .footer-brand-title {
   font-family: var(--font-sans), sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 16px;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   color: var(--foreground);
   line-height: 1.2;
 }
@@ -67,11 +73,11 @@
   font-family: var(--font-sans), sans-serif;
   font-weight: 600;
   font-size: 9.5px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
   color: var(--primary);
   text-transform: uppercase;
   line-height: 1.2;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .footer-contact-info {
@@ -95,33 +101,48 @@
   justify-content: center;
   gap: 8px;
   font-family: var(--font-sans), sans-serif;
-  font-size: 14px;
-  color: var(--foreground);
+  font-size: 13.5px;
+  color: var(--muted-foreground);
   text-decoration: none;
-  transition: color 0.15s ease;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--border);
+  transition: all 0.2s var(--spring-damp);
   line-height: 1.5;
 }
 
 .footer-wa-link:hover,
 .footer-address-link:hover {
-  color: var(--primary);
-  text-decoration: underline;
+  color: var(--foreground);
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-wa-link:active,
+.footer-address-link:active {
+  transform: scale(0.96);
+  transition: transform 100ms var(--spring-fast);
 }
 
 .footer-wa-link strong,
 .footer-address-link strong {
   color: var(--foreground);
+  font-weight: 600;
 }
 
 @media (max-width: 575px) {
   .site-footer {
-    padding: 32px 0 28px;
+    padding: 36px 0 32px;
   }
 
   .footer-wa-link,
   .footer-address-link {
-    font-size: 13px;
-    text-align: center;
+    font-size: 12.5px;
+    padding: 8px 12px;
+    width: 100%;
+    max-width: 320px;
   }
 }
 </style>

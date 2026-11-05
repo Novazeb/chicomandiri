@@ -1,134 +1,122 @@
 :root {
+  /* Apple Design System Colors */
   --card: #ffffff;
-  --ring: #3b82f6;
-  --input: #e5e7eb;
-  --muted: #f9fafb;
-  --accent: #e0f2fe;
-  --border: #e5e7eb;
-  --radius: 0.375rem;
-  --chart-1: #3b82f6;
-  --chart-2: #2563eb;
-  --chart-3: #1d4ed8;
-  --chart-4: #1e40af;
-  --chart-5: #1e3a8a;
+  --ring: #0071e3;
+  --input: #e5e5ea;
+  --muted: #f5f5f7;
+  --accent: #f0f7ff;
+  --border: rgba(0, 0, 0, 0.08);
+  --border-light: rgba(0, 0, 0, 0.04);
+  --radius: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+  --radius-full: 980px;
+
+  /* Apple Palette */
+  --chart-1: #0071e3;
+  --chart-2: #0077ed;
+  --chart-3: #0056b3;
+  --chart-4: #003d80;
+  --chart-5: #00224d;
   --popover: #ffffff;
-  --primary: #3b82f6;
-  --sidebar: #f9fafb;
-  --font-mono: JetBrains Mono, monospace;
-  --font-sans: Inter, sans-serif;
-  --secondary: #f3f4f6;
+  --primary: #0071e3;
+  --primary-hover: #0077ed;
+  --sidebar: rgba(255, 255, 255, 0.92);
+  --font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", system-ui, sans-serif;
+  --secondary: #f5f5f7;
   --background: #ffffff;
-  --font-serif: Source Serif 4, serif;
-  --foreground: #333333;
-  --destructive: #ef4444;
-  --sidebar-ring: #3b82f6;
-  --sidebar-accent: #e0f2fe;
-  --sidebar-border: #e5e7eb;
-  --card-foreground: #333333;
-  --sidebar-primary: #3b82f6;
-  --muted-foreground: #6b7280;
-  --accent-foreground: #1e3a8a;
-  --popover-foreground: #333333;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #333333;
-  --secondary-foreground: #4b5563;
+  --foreground: #1d1d1f;
+  --muted-foreground: #6e6e73;
+  --secondary-foreground: #424245;
+  --accent-foreground: #0071e3;
+  --destructive: #ff3b30;
   --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #1e3a8a;
+
+  --sidebar-ring: #0071e3;
+  --sidebar-accent: #f0f7ff;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --card-foreground: #1d1d1f;
+  --sidebar-primary: #0071e3;
+  --popover-foreground: #1d1d1f;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #1d1d1f;
+  --sidebar-accent-foreground: #0071e3;
   --sidebar-primary-foreground: #ffffff;
 
   /* Aliases & helper mappings */
   --primary-color: var(--primary);
-  --primary-hover: var(--chart-2);
   --clean-bg: var(--background);
+
+  /* Apple Fluid Motion Springs */
+  --spring-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  --spring-damp: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring-fast: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Apple Ambient Depth */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
 }
 
 .dark {
-  --card: #262626;
-  --ring: #3b82f6;
-  --input: #404040;
-  --muted: #1f1f1f;
-  --accent: #1e3a8a;
-  --border: #404040;
-  --radius: 0.375rem;
-  --chart-1: #60a5fa;
-  --chart-2: #3b82f6;
-  --chart-3: #2563eb;
-  --chart-4: #1d4ed8;
-  --chart-5: #1e40af;
-  --popover: #262626;
-  --primary: #3b82f6;
-  --sidebar: #171717;
-  --secondary: #262626;
-  --background: #171717;
-  --foreground: #e5e5e5;
-  --destructive: #ef4444;
-  --sidebar-ring: #3b82f6;
-  --sidebar-accent: #1e3a8a;
-  --sidebar-border: #404040;
-  --card-foreground: #e5e5e5;
-  --sidebar-primary: #3b82f6;
-  --muted-foreground: #a3a3a3;
-  --accent-foreground: #bfdbfe;
-  --popover-foreground: #e5e5e5;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #e5e5e5;
-  --secondary-foreground: #e5e5e5;
+  --card: #1c1c1e;
+  --ring: #0a84ff;
+  --input: #38383a;
+  --muted: #000000;
+  --accent: #1c2738;
+  --border: rgba(255, 255, 255, 0.12);
+  --border-light: rgba(255, 255, 255, 0.06);
+  --radius: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+  --radius-full: 980px;
+
+  --chart-1: #0a84ff;
+  --chart-2: #409cff;
+  --chart-3: #64b5f6;
+  --chart-4: #90caf9;
+  --chart-5: #bbdefb;
+  --popover: #1c1c1e;
+  --primary: #0a84ff;
+  --primary-hover: #409cff;
+  --sidebar: rgba(28, 28, 30, 0.94);
+  --secondary: #2c2c2e;
+  --background: #000000;
+  --foreground: #f5f5f7;
+  --muted-foreground: #a1a1a6;
+  --secondary-foreground: #d1d1d6;
+  --accent-foreground: #64b5f6;
+  --destructive: #ff453a;
   --destructive-foreground: #ffffff;
-  --sidebar-accent-foreground: #bfdbfe;
+
+  --sidebar-ring: #0a84ff;
+  --sidebar-accent: #1c2738;
+  --sidebar-border: rgba(255, 255, 255, 0.12);
+  --card-foreground: #f5f5f7;
+  --sidebar-primary: #0a84ff;
+  --popover-foreground: #f5f5f7;
+  --primary-foreground: #ffffff;
+  --sidebar-foreground: #f5f5f7;
+  --sidebar-accent-foreground: #64b5f6;
   --sidebar-primary-foreground: #ffffff;
 }
 
-@theme inline {
-  --color-card: var(--card);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-border: var(--border);
-  --color-radius: var(--radius);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-popover: var(--popover);
-  --color-primary: var(--primary);
-  --color-sidebar: var(--sidebar);
-  --color-font-mono: var(--font-mono);
-  --color-font-sans: var(--font-sans);
-  --color-secondary: var(--secondary);
-  --color-background: var(--background);
-  --color-font-serif: var(--font-serif);
-  --color-foreground: var(--foreground);
-  --color-destructive: var(--destructive);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-card-foreground: var(--card-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-}
-
-/* 1. Global Reset & Modern Minimal Typography */
+/* 1. Global Reset & Apple Typography Foundations (§15) */
 *, *::before, *::after {
   text-shadow: none !important;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  font-family: var(--font-sans) !important;
   color: var(--foreground);
   background-color: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.012em;
+  line-height: 1.55;
 }
 
 /* Suppress all obsolete status bars and template counters */
@@ -185,15 +173,28 @@ body {
   border-color: var(--border) !important;
 }
 
-/* 3. Modern Headings */
+/* 3. Typography Optical Sizing (§15) */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans), sans-serif !important;
+  font-family: var(--font-sans) !important;
   color: var(--foreground);
-  letter-spacing: -0.025em;
   font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
-/* 4. Modern Clean Minimal Navbar (Light & Crisp) */
+h1 {
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  letter-spacing: -0.025em;
+}
+
+/* 4. Translucent Floating Chrome (§12) */
 .rd-navbar-wrap {
   position: relative;
   z-index: 1080;
@@ -207,12 +208,15 @@ h1, h2, h3, h4, h5, h6 {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding: 0 18px !important;
+  padding: 0 20px !important;
   height: 64px !important;
-  background: var(--background) !important;
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
   border-bottom: 1px solid var(--border) !important;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03) !important;
   z-index: 1085 !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .rd-navbar-fixed .rd-navbar-brand,
@@ -232,6 +236,11 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center !important;
   gap: 12px !important;
   text-decoration: none !important;
+  transition: opacity 0.2s var(--spring-damp);
+}
+
+.brand-logo-container:active {
+  opacity: 0.75;
 }
 
 .brand-logo-img {
@@ -239,8 +248,8 @@ h1, h2, h3, h4, h5, h6 {
   height: 38px !important;
   min-width: 38px !important;
   object-fit: contain !important;
-  border-radius: var(--radius) !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
   flex-shrink: 0 !important;
 }
 
@@ -254,10 +263,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .brand-title {
   display: block !important;
-  font-family: var(--font-sans), sans-serif !important;
-  font-weight: 800 !important;
+  font-family: var(--font-sans) !important;
+  font-weight: 700 !important;
   font-size: 15px !important;
-  letter-spacing: -0.01em !important;
+  letter-spacing: -0.02em !important;
   color: var(--foreground) !important;
   line-height: 1.2 !important;
   margin: 0 0 2px 0 !important;
@@ -265,43 +274,57 @@ h1, h2, h3, h4, h5, h6 {
 
 .brand-subtitle {
   display: block !important;
-  font-family: var(--font-sans), sans-serif !important;
+  font-family: var(--font-sans) !important;
   font-weight: 600 !important;
   font-size: 9px !important;
-  letter-spacing: 0.5px !important;
+  letter-spacing: 0.06em !important;
   color: var(--primary) !important;
   text-transform: uppercase !important;
   line-height: 1.2 !important;
   margin: 0 !important;
 }
 
-/* Minimalist Hamburger Toggle in Dark Neutral */
+/* Minimalist Apple-style Hamburger Toggle */
+.rd-navbar-toggle {
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: transform 0.15s var(--spring-fast);
+}
+
+.rd-navbar-toggle:active {
+  transform: scale(0.92);
+}
+
 .rd-navbar-toggle span,
 .rd-navbar-toggle span::before,
 .rd-navbar-toggle span::after {
   background-color: var(--foreground) !important;
+  border-radius: 2px !important;
 }
 
-/* Mobile Sidebar Drawer (Starts right below 64px header, light & minimal) */
+/* Translucent Drawer Sheet (§12) */
 .rd-navbar-fixed .rd-navbar-nav-wrap {
   position: fixed !important;
   left: 0 !important;
   top: 64px !important;
   bottom: 0 !important;
   height: calc(100vh - 64px) !important;
-  width: 275px !important;
+  width: 285px !important;
   max-width: 85vw !important;
   z-index: 1084 !important;
-  background: var(--sidebar) !important;
-  border-right: 1px solid var(--sidebar-border) !important;
-  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.06) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(25px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(25px) saturate(190%) !important;
+  border-right: 1px solid var(--border) !important;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08) !important;
   padding: 16px 0 28px 0 !important;
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
 }
 
 .rd-navbar-fixed .rd-navbar-nav {
-  padding: 0 12px !important;
+  padding: 0 14px !important;
   margin: 0 !important;
   display: block !important;
 }
@@ -313,78 +336,94 @@ h1, h2, h3, h4, h5, h6 {
 
 .rd-navbar-fixed .rd-nav-link {
   display: block !important;
-  color: var(--sidebar-foreground) !important;
-  font-family: var(--font-sans), sans-serif !important;
+  color: var(--foreground) !important;
+  font-family: var(--font-sans) !important;
   font-weight: 500 !important;
   font-size: 14px !important;
-  padding: 10px 16px !important;
-  border-radius: var(--radius) !important;
-  transition: all 0.15s ease !important;
+  letter-spacing: -0.01em !important;
+  padding: 11px 16px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s var(--spring-damp) !important;
   text-decoration: none !important;
+}
+
+.rd-navbar-fixed .rd-nav-link:active {
+  transform: scale(0.98);
 }
 
 .rd-navbar-fixed .rd-nav-item.active .rd-nav-link,
 .rd-navbar-fixed .rd-nav-link:hover {
-  color: var(--sidebar-accent-foreground) !important;
-  background: var(--sidebar-accent) !important;
+  color: var(--primary) !important;
+  background: rgba(0, 113, 227, 0.08) !important;
   font-weight: 600 !important;
 }
 
 .rd-navbar-fixed .contacts-classic {
   padding: 16px 20px 0 !important;
   margin-top: 14px !important;
-  border-top: 1px solid var(--sidebar-border) !important;
+  border-top: 1px solid var(--border) !important;
 }
 
 .contacts-classic-text {
-  font-family: var(--font-sans), sans-serif !important;
+  font-family: var(--font-sans) !important;
   font-weight: 600 !important;
   font-size: 13.5px !important;
   color: var(--primary) !important;
   text-decoration: none !important;
 }
 
-/* 5. Minimalist Clean Buttons (shadcn standard) */
+/* 5. Tactile Response Buttons (§1, §4) */
 .button-primary,
-.button-primary:active,
 .button-primary:focus {
   background-color: var(--primary) !important;
   border: 1px solid var(--primary) !important;
   color: var(--primary-foreground) !important;
-  font-family: var(--font-sans), sans-serif !important;
+  font-family: var(--font-sans) !important;
   font-weight: 600 !important;
   font-size: 14px !important;
-  letter-spacing: -0.01em !important;
-  padding: 10px 20px !important;
-  border-radius: var(--radius) !important;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
-  transition: all 0.15s ease !important;
+  letter-spacing: -0.015em !important;
+  padding: 11px 22px !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: 0 1px 3px rgba(0, 113, 227, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.2s var(--spring-damp) !important;
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   gap: 8px !important;
+  cursor: pointer;
 }
 
 .button-primary:hover {
-  background-color: var(--chart-2) !important;
-  border-color: var(--chart-2) !important;
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
   color: var(--primary-foreground) !important;
-  box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.25) !important;
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Tactile scale-down on instant press (§1) */
+.button-primary:active,
+.button:active,
+button:active {
+  transform: scale(0.96) !important;
+  transition: transform 100ms var(--spring-fast) !important;
 }
 
 .button-primary-outline {
   color: var(--foreground) !important;
-  border: 1px solid var(--border) !important;
-  background-color: var(--background) !important;
-  font-family: var(--font-sans), sans-serif !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  font-family: var(--font-sans) !important;
   font-weight: 500 !important;
   font-size: 14px !important;
   letter-spacing: -0.01em !important;
-  padding: 10px 18px !important;
-  border-radius: var(--radius) !important;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.04) !important;
-  transition: all 0.15s ease !important;
+  padding: 11px 20px !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.2s var(--spring-damp) !important;
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -393,9 +432,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .button-primary-outline:hover {
-  background-color: var(--secondary) !important;
-  border-color: #d1d5db !important;
+  background-color: #f5f5f7 !important;
+  border-color: rgba(0, 0, 0, 0.2) !important;
   color: var(--foreground) !important;
+}
+
+.button-primary-outline:active {
+  transform: scale(0.96) !important;
+  transition: transform 100ms var(--spring-fast) !important;
 }
 
 /* Suppress obsolete lines */
@@ -403,7 +447,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none !important;
 }
 
-/* 6. Form Fields (Clean Minimalist Input) */
+/* 6. Form Fields (Apple Input Craft) */
 .form-wrap {
   position: relative !important;
   margin-bottom: 16px !important;
@@ -420,51 +464,52 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--foreground) !important;
   opacity: 1 !important;
   line-height: 1.3 !important;
+  letter-spacing: -0.01em !important;
 }
 
 .form-wrap .form-input {
   position: static !important;
   display: block !important;
   width: 100% !important;
-  height: 42px !important;
+  height: 44px !important;
   padding: 10px 14px !important;
-  background: var(--background) !important;
-  border: 1px solid var(--input) !important;
-  border-radius: var(--radius) !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  border-radius: 11px !important;
   color: var(--foreground) !important;
   font-size: 14px !important;
-  font-family: var(--font-sans), sans-serif !important;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.02) !important;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: var(--font-sans) !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
+  transition: border-color 0.2s var(--spring-damp), box-shadow 0.2s var(--spring-damp);
 }
 
 .form-wrap .form-input:focus {
   border-color: var(--ring) !important;
   outline: none !important;
-  background: var(--background) !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18) !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 3.5px rgba(0, 113, 227, 0.15) !important;
 }
 
 .form-wrap .form-input::placeholder {
-  color: var(--muted-foreground) !important;
-  font-size: 13px !important;
+  color: #86868b !important;
+  font-size: 13.5px !important;
 }
 
 /* 7. Section Padding System */
 .section-xl {
-  padding: 72px 0;
+  padding: 80px 0;
 }
 
 .section-lg {
-  padding: 60px 0;
+  padding: 64px 0;
 }
 
 @media (max-width: 767px) {
   .section-xl {
-    padding: 48px 0;
+    padding: 52px 0;
   }
   .section-lg {
-    padding: 40px 0;
+    padding: 44px 0;
   }
 }
 
@@ -478,7 +523,6 @@ img {
   max-width: 100%;
 }
 
-/* Ensure smooth touch interactions on mobile & tablet */
 @media (max-width: 991px) {
   .container {
     padding-left: 18px !important;
@@ -488,7 +532,27 @@ img {
 
 @media (max-width: 480px) {
   .container {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+/* 9. Accessibility (§14 - Reduced Motion & Reduced Transparency) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .rd-navbar-fixed .rd-navbar-panel,
+  .rd-navbar-fixed .rd-navbar-nav-wrap,
+  .button-primary-outline {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }

@@ -47,7 +47,7 @@
           </div>
         </div>
 
-        <!-- Right: Modern Showcase Card -->
+        <!-- Right: Apple-Style Showcase Card -->
         <div class="col-lg-6 hero-visual-col">
           <div class="hero-card-frame">
             <div class="hero-media-wrap">
@@ -62,18 +62,22 @@
               </div>
             </div>
 
-            <!-- Slide Switchers -->
-            <div class="hero-slide-switchers">
-              <button 
-                v-for="(slide, idx) in slides" 
-                :key="idx" 
-                class="hero-switch-btn" 
-                :class="{ 'switch-active': activeSlide === idx }"
-                @click="activeSlide = idx"
-                type="button"
-              >
-                {{ slide.tabName }}
-              </button>
+            <!-- Apple Segmented Control (§4, §6) -->
+            <div class="hero-segmented-wrap">
+              <div class="hero-slide-switchers" role="tablist">
+                <button 
+                  v-for="(slide, idx) in slides" 
+                  :key="idx" 
+                  class="hero-switch-btn" 
+                  :class="{ 'switch-active': activeSlide === idx }"
+                  @click="activeSlide = idx"
+                  type="button"
+                  role="tab"
+                  :aria-selected="activeSlide === idx"
+                >
+                  {{ slide.tabName }}
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -113,14 +117,14 @@ const slides = [
 .hero-section {
   position: relative;
   background-color: var(--background);
-  padding: 80px 0 85px;
+  padding: 84px 0 90px;
   border-bottom: 1px solid var(--border);
   overflow: hidden;
 }
 
 @media (max-width: 991px) {
   .hero-section {
-    padding: 50px 0 55px;
+    padding: 54px 0 60px;
   }
 }
 
@@ -129,29 +133,30 @@ const slides = [
 }
 
 .hero-category-text {
-  font-family: var(--font-sans), sans-serif;
-  font-size: 13px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 600;
   color: var(--primary);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
 
 .hero-title {
   color: var(--foreground);
-  font-weight: 800;
-  font-size: clamp(26px, 3.4vw, 42px);
-  line-height: 1.25;
-  letter-spacing: -0.03em;
+  font-weight: 700;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
   margin-bottom: 18px;
 }
 
 .hero-lead {
   color: var(--muted-foreground);
-  font-size: 15.5px;
-  line-height: 1.65;
-  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-bottom: 32px;
   max-width: 530px;
 }
 
@@ -160,11 +165,10 @@ const slides = [
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
-.hero-btn-main,
-.hero-btn-sub {
+.hero-btn-main {
   white-space: nowrap;
 }
 
@@ -190,13 +194,10 @@ const slides = [
 
   .hero-actions {
     justify-content: center;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
   }
 
-  .hero-btn-main,
-  .hero-btn-sub {
+  .hero-btn-main {
     width: 100%;
     max-width: 290px;
     margin: 0 auto;
@@ -209,8 +210,8 @@ const slides = [
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: center;
-  gap: 16px;
-  padding-top: 24px;
+  gap: 18px;
+  padding-top: 28px;
   border-top: 1px solid var(--border);
   text-align: center;
 }
@@ -218,8 +219,8 @@ const slides = [
 @media (max-width: 767px) {
   .hero-trust-strip {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    padding-top: 20px;
+    gap: 10px;
+    padding-top: 24px;
   }
 
   .trust-divider {
@@ -235,17 +236,18 @@ const slides = [
 }
 
 .trust-num {
-  font-family: var(--font-sans), sans-serif;
-  font-weight: 800;
-  font-size: 19px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 20px;
   color: var(--primary);
   line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .trust-label {
   font-size: 11.5px;
   color: var(--muted-foreground);
-  margin-top: 3px;
+  margin-top: 4px;
   line-height: 1.35;
   text-align: center;
 }
@@ -256,13 +258,14 @@ const slides = [
   background: var(--border);
 }
 
-/* Right Visual Frame */
+/* Right Apple Visual Frame (§12) */
 .hero-card-frame {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s var(--spring-damp), box-shadow 0.3s var(--spring-damp);
 }
 
 .hero-media-wrap {
@@ -284,7 +287,7 @@ const slides = [
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s var(--spring-damp);
 }
 
 .hero-media-caption {
@@ -293,55 +296,71 @@ const slides = [
   left: 0;
   right: 0;
   padding: 24px 20px 18px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(23, 23, 23, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(29, 29, 31, 0.88) 100%);
   color: #ffffff;
   text-align: left;
 }
 
 .hero-caption-title {
-  font-family: var(--font-sans), sans-serif;
-  font-weight: 700;
+  font-family: var(--font-sans);
+  font-weight: 600;
   font-size: 15px;
-  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
   color: #ffffff;
 }
 
 .hero-caption-sub {
   font-size: 12px;
-  color: #e5e5e5;
+  color: #d2d2d7;
   line-height: 1.45;
+}
+
+/* Apple Segmented Control (§4, §6) */
+.hero-segmented-wrap {
+  padding: 8px 12px;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
 }
 
 .hero-slide-switchers {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background: var(--muted);
-  border-top: 1px solid var(--border);
+  background: var(--secondary);
+  padding: 3px;
+  border-radius: 11px;
+  gap: 3px;
 }
 
 .hero-switch-btn {
-  padding: 13px 10px;
-  font-family: var(--font-sans), sans-serif;
-  font-size: 12px;
+  padding: 9px 8px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
   font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--muted-foreground);
   background: transparent;
   border: none;
+  border-radius: 9px;
   cursor: pointer;
   text-align: center;
-  transition: all 0.15s ease;
-  border-bottom: 2px solid transparent;
+  transition: all 0.2s var(--spring-damp);
+  outline: none;
 }
 
 .hero-switch-btn:hover {
   color: var(--foreground);
-  background: var(--card);
+}
+
+.hero-switch-btn:active {
+  transform: scale(0.96);
+  transition: transform 100ms var(--spring-fast);
 }
 
 .switch-active {
-  color: var(--primary) !important;
+  color: var(--foreground) !important;
   font-weight: 600 !important;
-  background: var(--card) !important;
-  border-bottom-color: var(--primary) !important;
+  background: #ffffff !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
 }
 </style>

@@ -11,9 +11,9 @@
         </p>
       </div>
 
-      <!-- Service Category Tabs (Clean Segmented Control) -->
+      <!-- Service Category Tabs (Apple Segmented Control §4, §6) -->
       <div class="service-tabs-wrapper">
-        <div class="service-tabs-nav">
+        <div class="service-tabs-nav" role="tablist">
           <button 
             v-for="service in services" 
             :key="service.id" 
@@ -21,6 +21,8 @@
             :class="{ 'tab-active': activeTab === service.id }"
             @click="activeTab = service.id"
             type="button"
+            role="tab"
+            :aria-selected="activeTab === service.id"
           >
             <span :class="['tab-icon', service.icon]"></span>
             <span class="tab-label">{{ service.name }}</span>
@@ -28,7 +30,7 @@
         </div>
       </div>
 
-      <!-- Active Service Content Showcase -->
+      <!-- Active Service Content Showcase Card (§12) -->
       <div class="service-display-card">
         <div class="row align-items-center service-card-grid">
           <!-- Text Details (Left) -->
@@ -178,37 +180,39 @@ const currentService = computed(() => {
 }
 
 .services-heading {
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .services-title {
   color: var(--foreground);
-  font-weight: 800;
-  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.03em;
   margin-bottom: 8px;
 }
 
 .services-desc {
   color: var(--muted-foreground);
-  font-size: 15px;
+  font-size: 15.5px;
   max-width: 600px;
   line-height: 1.6;
+  letter-spacing: -0.01em;
   margin: 0 auto;
 }
 
-/* Category Navigation Tabs (Clean Segmented Control) */
+/* Category Navigation Tabs (Apple Segmented Control §4, §6) */
 .service-tabs-wrapper {
   max-width: 780px;
-  margin: 0 auto 30px;
+  margin: 0 auto 36px;
 }
 
 .service-tabs-nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6px;
+  gap: 4px;
   background: var(--secondary);
-  padding: 6px;
-  border-radius: calc(var(--radius) + 2px);
+  padding: 4px;
+  border-radius: 14px;
   border: 1px solid var(--border);
 }
 
@@ -223,13 +227,13 @@ const currentService = computed(() => {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 11px 10px;
+  padding: 10px 12px;
   background: transparent;
-  border: 1px solid transparent;
-  border-radius: var(--radius);
+  border: none;
+  border-radius: 10px;
   color: var(--muted-foreground);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all 0.2s var(--spring-damp);
   outline: none;
   text-align: center;
 }
@@ -238,41 +242,46 @@ const currentService = computed(() => {
   color: var(--foreground);
 }
 
+.service-tab-btn:active {
+  transform: scale(0.97);
+  transition: transform 100ms var(--spring-fast);
+}
+
 .tab-active {
-  background: var(--card) !important;
-  border-color: var(--border) !important;
-  color: var(--primary) !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  background: #ffffff !important;
+  color: var(--foreground) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
   font-weight: 600;
 }
 
 .tab-icon {
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .tab-label {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-/* Service Card Showcase */
+/* Service Card Showcase (§12 Materials & Depth) */
 .service-display-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 34px 30px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border-radius: var(--radius-xl);
+  padding: 38px 34px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s var(--spring-damp);
 }
 
 @media (min-width: 992px) {
   .service-display-card {
-    padding: 40px 38px;
+    padding: 44px 40px;
   }
 }
 
 .service-card-grid {
-  row-gap: 28px;
+  row-gap: 32px;
 }
 
 .service-info-col {
@@ -282,60 +291,64 @@ const currentService = computed(() => {
 
 @media (min-width: 992px) {
   .service-info-col {
-    padding-right: 25px;
+    padding-right: 28px;
   }
 }
 
 .service-pillar-text {
-  font-family: var(--font-sans), sans-serif;
-  font-size: 12.5px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
   color: var(--primary);
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .service-content-title {
   color: var(--foreground);
-  font-size: clamp(20px, 2.2vw, 26px);
-  font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 10px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 12px;
 }
 
 .service-lead-text {
   color: var(--secondary-foreground);
-  font-size: 14.5px;
+  font-size: 15px;
   font-weight: 500;
   line-height: 1.6;
-  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
 }
 
 .service-detail-text {
   color: var(--muted-foreground);
-  font-size: 13.5px;
+  font-size: 14px;
   line-height: 1.65;
-  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
 }
 
 .service-specs-box {
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  margin-bottom: 24px;
-  padding: 14px 16px;
-  background: var(--muted);
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 16px 18px;
+  background: var(--secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius);
 }
 
 .service-spec-item {
-  font-size: 13px;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
   color: var(--foreground);
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
 }
 
 .service-action-wrap {
@@ -369,7 +382,7 @@ const currentService = computed(() => {
 
   .service-specs-box {
     text-align: left;
-    max-width: 360px;
+    max-width: 380px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -391,16 +404,17 @@ const currentService = computed(() => {
 .service-image-frame {
   position: relative;
   width: 100%;
-  height: 330px;
-  border-radius: 10px;
+  height: 340px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--secondary);
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (min-width: 992px) {
   .service-image-frame {
-    height: 380px;
+    height: 400px;
   }
 }
 
@@ -416,11 +430,14 @@ const currentService = computed(() => {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
   color: var(--foreground);
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 500;
+  letter-spacing: -0.01em;
   border-top: 1px solid var(--border);
 }
 </style>

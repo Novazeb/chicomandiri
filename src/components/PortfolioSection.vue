@@ -37,7 +37,7 @@
         </div>
       </div>
 
-      <!-- Main Showcase Featured Card -->
+      <!-- Main Showcase Featured Card (§12) -->
       <div class="showcase-card">
         <div class="row no-gutters align-items-stretch">
           <!-- Large Image Section (60% on desktop) -->
@@ -212,25 +212,27 @@ function prevProject() {
 }
 
 .portfolio-header-row {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .portfolio-title {
-  font-weight: 800;
-  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  letter-spacing: -0.03em;
   color: var(--foreground);
   margin-bottom: 8px;
 }
 
 .portfolio-desc {
   color: var(--muted-foreground);
-  font-size: 15px;
+  font-size: 15.5px;
   max-width: 600px;
   line-height: 1.6;
+  letter-spacing: -0.01em;
   margin: 0;
 }
 
-/* Navigation Controls */
+/* Navigation Controls (§1, §4) */
 .portfolio-nav-controls {
   display: inline-flex;
   align-items: center;
@@ -241,7 +243,7 @@ function prevProject() {
 .portfolio-nav-btn {
   width: 40px;
   height: 40px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-full);
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--foreground);
@@ -250,18 +252,24 @@ function prevProject() {
   justify-content: center;
   font-size: 13px;
   cursor: pointer;
-  transition: all 0.15s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s var(--spring-damp);
+  box-shadow: var(--shadow-sm);
 }
 
 .portfolio-nav-btn:hover {
-  background: var(--secondary);
-  border-color: #cbd5e1;
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.15);
   color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.portfolio-nav-btn:active {
+  transform: scale(0.93) !important;
+  transition: transform 100ms var(--spring-fast);
 }
 
 .portfolio-counter {
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans);
   font-weight: 600;
   font-size: 13.5px;
   color: var(--muted-foreground);
@@ -269,13 +277,14 @@ function prevProject() {
   text-align: center;
 }
 
-/* Main Showcase Card */
+/* Main Showcase Card (§12) */
 .showcase-card {
   background: var(--card);
-  border-radius: 12px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-lg);
+  transition: box-shadow 0.3s var(--spring-damp);
 }
 
 .showcase-media-box {
@@ -289,7 +298,7 @@ function prevProject() {
 @media (min-width: 992px) {
   .showcase-media-box {
     height: 100%;
-    min-height: 460px;
+    min-height: 470px;
   }
 }
 
@@ -302,20 +311,23 @@ function prevProject() {
 
 .showcase-image-tag {
   position: absolute;
-  bottom: 14px;
-  left: 14px;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.95);
+  bottom: 16px;
+  left: 16px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
+  border-radius: var(--radius-full);
   color: var(--foreground);
   font-size: 12px;
   font-weight: 600;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  letter-spacing: -0.01em;
+  box-shadow: var(--shadow-sm);
 }
 
 .showcase-info-box {
-  padding: 32px 28px;
+  padding: 34px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -326,45 +338,48 @@ function prevProject() {
 
 @media (min-width: 992px) {
   .showcase-info-box {
-    padding: 38px 34px;
+    padding: 42px 36px;
   }
 }
 
 .showcase-category {
-  font-family: var(--font-sans), sans-serif;
-  font-size: 12px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.06em;
   color: var(--primary);
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 
 .showcase-title {
-  font-family: var(--font-sans), sans-serif;
-  font-weight: 800;
-  font-size: clamp(20px, 2.2vw, 25px);
-  line-height: 1.3;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: clamp(21px, 2.3vw, 26px);
+  letter-spacing: -0.025em;
+  line-height: 1.25;
   color: var(--foreground);
   margin-bottom: 12px;
 }
 
 .showcase-desc {
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.6;
+  letter-spacing: -0.01em;
   color: var(--muted-foreground);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .showcase-specs-list {
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
 }
 
 .showcase-spec-item {
-  font-size: 13px;
+  font-size: 13.5px;
+  letter-spacing: -0.01em;
   color: var(--foreground);
   display: flex;
   align-items: center;
@@ -391,7 +406,7 @@ function prevProject() {
 
   .showcase-info-box {
     text-align: center;
-    padding: 26px 18px;
+    padding: 28px 20px;
   }
 
   .showcase-specs-list {
@@ -411,7 +426,7 @@ function prevProject() {
 .thumbs-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 @media (min-width: 576px) {
@@ -423,28 +438,36 @@ function prevProject() {
 @media (min-width: 992px) {
   .thumbs-grid {
     grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
+    gap: 14px;
   }
 }
 
 .thumb-card {
   position: relative;
-  height: 90px;
+  height: 94px;
   border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;
   border: 1px solid var(--border);
-  transition: all 0.15s ease;
+  transition: all 0.2s var(--spring-damp);
   background: var(--card);
+  box-shadow: var(--shadow-sm);
 }
 
 .thumb-card:hover {
-  border-color: #94a3b8;
+  border-color: rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.thumb-card:active {
+  transform: scale(0.96);
+  transition: transform 100ms var(--spring-fast);
 }
 
 .thumb-active {
   border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2px var(--ring) !important;
+  box-shadow: 0 0 0 2.5px rgba(0, 113, 227, 0.35) !important;
 }
 
 .thumb-photo {
@@ -459,11 +482,14 @@ function prevProject() {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 4px 6px;
-  background: rgba(255, 255, 255, 0.94);
+  padding: 5px 8px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   color: var(--foreground);
   font-size: 11px;
   font-weight: 600;
+  letter-spacing: -0.01em;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
