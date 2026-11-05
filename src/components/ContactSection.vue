@@ -7,7 +7,7 @@
           <div class="workshop-card">
             <div class="workshop-photo-wrap">
               <img 
-                src="/images/chico/pintu 1.webp" 
+                src="/images/chico/workshop-las.jpg" 
                 alt="Workshop Bengkel Las Chico Mandiri" 
                 class="workshop-photo"
               />

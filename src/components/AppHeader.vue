@@ -42,6 +42,7 @@
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#about">Keunggulan</a></li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#services">Layanan</a></li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#portfolio">Portofolio</a></li>
+                  <li class="rd-nav-item"><a class="rd-nav-link" href="#order-steps">Cara Pesan</a></li>
                   <li class="rd-nav-item"><a class="rd-nav-link" href="#contacts">Kontak</a></li>
                 </ul>
 

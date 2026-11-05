@@ -2,18 +2,18 @@
   <section class="hero-section" id="home">
     <div class="container">
       <div class="row align-items-center hero-grid">
-        <!-- Left: Headline & Modern Actions -->
+        <!-- Left: Punchy Headline & Direct Actions -->
         <div class="col-lg-6 hero-text-col">
           <p class="hero-category-text">
-            Metal Works &bull; Alumunium &bull; Glass &bull; Laser Cutting
+            Bengkel Las &amp; Kaca Tempered Medan
           </p>
 
           <h1 class="hero-title">
-            Konstruksi Besi Kokoh &amp; Kaca Tempered Presisi di Medan
+            Bikin Kanopi &amp; Pagar Impian, Rapi dan Bergaransi
           </h1>
 
           <p class="hero-lead">
-            Spesialis kanopi kaca tempered, pagar minimalis modern, pintu sliding presisi, dan partisi shower tempered bergaransi resmi. Pengerjaan rapi, besi hollow galvanis anti-karat, dan gratis survey ke lokasi.
+            Spesialis kanopi kaca tempered, pagar minimalis, pintu sliding, dan partisi shower di Medan. Bisa custom model apa saja sesuai selera &amp; budget. Gratis survey langsung ke rumah Anda.
           </p>
 
           <div class="hero-actions">
@@ -23,31 +23,36 @@
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <span class="fa-brands fa-whatsapp" style="font-size: 16px;"></span>
+              <span class="fa-brands fa-whatsapp" style="font-size: 17px;"></span>
               <span>Konsultasi via WA</span>
             </a>
+          </div>
+
+          <div class="hero-wa-hint">
+            <span class="fa-solid fa-camera text-primary"></span>
+            <span>Punya foto model dari Pinterest atau Google? Kirim ke WA, langsung kami hitung biayanya!</span>
           </div>
 
           <!-- Trust Strip: 3 Clean Value Markers -->
           <div class="hero-trust-strip">
             <div class="trust-item">
-              <span class="trust-num">10+</span>
-              <span class="trust-label">Tahun Pengalaman</span>
+              <span class="trust-num">10+ Thn</span>
+              <span class="trust-label">Pengalaman Las</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
               <span class="trust-num">GRATIS</span>
-              <span class="trust-label">Survey Medan &amp; Sekitarnya</span>
+              <span class="trust-label">Survey ke Rumah</span>
             </div>
             <div class="trust-divider"></div>
             <div class="trust-item">
               <span class="trust-num">100%</span>
-              <span class="trust-label">Garansi Struktur</span>
+              <span class="trust-label">Garansi Sambungan</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Apple-Style Showcase Card -->
+        <!-- Right: Visual-First Showcase Card with Real Photos -->
         <div class="col-lg-6 hero-visual-col">
           <div class="hero-card-frame">
             <div class="hero-media-wrap">
@@ -56,13 +61,25 @@
                 :alt="slides[activeSlide].title" 
                 class="hero-media-img"
               />
+              <!-- Floating Visual Proof Pills -->
+              <div class="hero-floating-badges">
+                <span class="badge-pill-frosted">
+                  <span class="fa-solid fa-location-dot text-primary"></span>
+                  Foto Asli Proyek
+                </span>
+                <span class="badge-pill-frosted">
+                  <span class="fa-solid fa-certificate text-primary"></span>
+                  Garansi Rapi
+                </span>
+              </div>
+
               <div class="hero-media-caption">
                 <div class="hero-caption-title">{{ slides[activeSlide].title }}</div>
                 <div class="hero-caption-sub">{{ slides[activeSlide].desc }}</div>
               </div>
             </div>
 
-            <!-- Apple Segmented Control (§4, §6) -->
+            <!-- Apple Segmented Control 4 Kategori Proyek (§4, §6) -->
             <div class="hero-segmented-wrap">
               <div class="hero-slide-switchers" role="tablist">
                 <button 
@@ -94,21 +111,27 @@ const activeSlide = ref(0)
 const slides = [
   {
     tabName: 'Kanopi Kaca',
-    title: 'Kanopi Kaca Tempered & Rangka Besi',
-    desc: 'Struktur rangka hollow galvanis kokoh dengan atap kaca tempered SNI tahan benturan dan cuaca ekstrem.',
+    title: 'Kanopi Kaca Tempered Carport',
+    desc: 'Rangka besi hollow galvanis kokoh dengan atap kaca tempered tebal tahan benturan.',
     image: '/images/chico/atap 1.jpg'
   },
   {
-    tabName: 'Pagar Minimalis',
-    title: 'Pagar Besi Hollow Galvanis Modern',
-    desc: 'Desain minimalis elegan dengan pelapisan cat anti-karat tahan panas hujan di Medan.',
+    tabName: 'Pagar Modern',
+    title: 'Pagar Besi Minimalis Anti-Karat',
+    desc: 'Model kisi-kisi rapi dan cat tahan karat untuk rumah modern di Medan.',
     image: '/images/chico/pagar 1.jpg'
+  },
+  {
+    tabName: 'Pintu Sliding',
+    title: 'Pintu Geser Kaca & Aluminium',
+    desc: 'Rel geser senyap, hemat tempat, cocok untuk pintu utama, taman, maupun penyekat.',
+    image: '/images/chico/pintu 1.webp'
   },
   {
     tabName: 'Partisi Shower',
     title: 'Partisi Kaca Shower Tempered',
-    desc: 'Kaca tempered 10mm dengan aksesoris engsel & handle stainless SUS 304 anti-karat basah.',
-    image: '/images/chico/shower 2.webp'
+    desc: 'Kaca tempered 10mm dengan fitting stainless SUS 304 anti-karat basah.',
+    image: '/images/chico/shower 1.jpg'
   }
 ]
 </script>
@@ -134,10 +157,10 @@ const slides = [
 
 .hero-category-text {
   font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11.5px;
+  font-weight: 700;
   color: var(--primary);
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
@@ -156,7 +179,7 @@ const slides = [
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: -0.01em;
-  margin-bottom: 32px;
+  margin-bottom: 26px;
   max-width: 530px;
 }
 
@@ -165,11 +188,21 @@ const slides = [
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
 
 .hero-btn-main {
   white-space: nowrap;
+}
+
+.hero-wa-hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted-foreground);
+  margin-bottom: 32px;
+  line-height: 1.45;
 }
 
 /* Mobile Typography & Layout Centering */
@@ -194,7 +227,7 @@ const slides = [
 
   .hero-actions {
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 14px;
   }
 
   .hero-btn-main {
@@ -202,6 +235,13 @@ const slides = [
     max-width: 290px;
     margin: 0 auto;
     justify-content: center;
+  }
+
+  .hero-wa-hint {
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 28px;
   }
 }
 
@@ -211,7 +251,7 @@ const slides = [
   grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: center;
   gap: 18px;
-  padding-top: 28px;
+  padding-top: 24px;
   border-top: 1px solid var(--border);
   text-align: center;
 }
@@ -220,7 +260,7 @@ const slides = [
   .hero-trust-strip {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    padding-top: 24px;
+    padding-top: 20px;
   }
 
   .trust-divider {
@@ -238,7 +278,7 @@ const slides = [
 .trust-num {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 20px;
+  font-size: 19px;
   color: var(--primary);
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -290,13 +330,41 @@ const slides = [
   transition: opacity 0.3s var(--spring-damp);
 }
 
+.hero-floating-badges {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.badge-pill-frosted {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-full);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--foreground);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
 .hero-media-caption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 24px 20px 18px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(29, 29, 31, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(29, 29, 31, 0.9) 100%);
   color: #ffffff;
   text-align: left;
 }
@@ -325,7 +393,7 @@ const slides = [
 
 .hero-slide-switchers {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   background: var(--secondary);
   padding: 3px;
   border-radius: 11px;
@@ -333,9 +401,9 @@ const slides = [
 }
 
 .hero-switch-btn {
-  padding: 9px 8px;
+  padding: 9px 4px;
   font-family: var(--font-sans);
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--muted-foreground);
@@ -346,6 +414,7 @@ const slides = [
   text-align: center;
   transition: all 0.2s var(--spring-damp);
   outline: none;
+  white-space: nowrap;
 }
 
 .hero-switch-btn:hover {

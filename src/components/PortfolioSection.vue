@@ -1,86 +1,62 @@
 <template>
   <section class="portfolio-section section-lg bg-muted" id="portfolio">
     <div class="container">
-      <!-- Section Header with Integrated Navigation Controls -->
-      <div class="row align-items-end justify-content-between portfolio-header-row">
-        <div class="col-lg-8 text-center text-lg-left">
-          <h2 class="portfolio-title">
-            Galeri Portofolio Proyek
-          </h2>
-          <p class="portfolio-desc">
-            Dokumentasi pengerjaan nyata kanopi, pagar minimalis, pintu geser, partisi kaca, dan pengelasan presisi Bengkel Las Chico Mandiri di Medan &amp; Deli Serdang.
-          </p>
-        </div>
+      <!-- Section Header -->
+      <div class="section-heading text-center">
+        <h2 class="portfolio-title">
+          Galeri Foto Proyek Asli
+        </h2>
+        <p class="portfolio-desc">
+          Dokumentasi pengerjaan nyata kanopi, pagar minimalis, pintu geser, dan partisi kaca Bengkel Las Chico Mandiri di wilayah Medan &amp; Deli Serdang.
+        </p>
+      </div>
 
-        <div class="col-12 col-lg-4 text-center text-lg-right mt-3 mt-lg-0">
-          <div class="portfolio-nav-controls">
-            <button 
-              class="portfolio-nav-btn" 
-              @click="prevProject"
-              type="button" 
-              aria-label="Proyek Sebelumnya"
-            >
-              <span class="fa-solid fa-arrow-left"></span>
-            </button>
-            <span class="portfolio-counter">
-              {{ currentIndex + 1 }} / {{ projects.length }}
-            </span>
-            <button 
-              class="portfolio-nav-btn" 
-              @click="nextProject"
-              type="button" 
-              aria-label="Proyek Selanjutnya"
-            >
-              <span class="fa-solid fa-arrow-right"></span>
-            </button>
-          </div>
+      <!-- Category Filter Pills (Apple Segmented Style §4, §6) -->
+      <div class="portfolio-filters-wrap">
+        <div class="portfolio-filter-nav" role="tablist">
+          <button 
+            v-for="cat in categories" 
+            :key="cat.key" 
+            class="filter-pill-btn" 
+            :class="{ 'filter-active': activeCategory === cat.key }"
+            @click="activeCategory = cat.key"
+            type="button"
+          >
+            {{ cat.label }} ({{ getCategoryCount(cat.key) }})
+          </button>
         </div>
       </div>
 
-      <!-- Main Showcase Featured Card (§12) -->
-      <div class="showcase-card">
-        <div class="row no-gutters align-items-stretch">
-          <!-- Large Image Section (60% on desktop) -->
-          <div class="col-lg-7">
-            <div class="showcase-media-box">
-              <img 
-                :src="currentProject.image" 
-                :alt="currentProject.title"
-                class="showcase-img"
-              />
-              <div class="showcase-image-tag">
-                <span class="fa-solid fa-location-dot text-primary" style="margin-right: 6px;"></span>
-                {{ currentProject.location }}
+      <!-- Responsive Photo Gallery Grid -->
+      <div class="row row-20 gallery-grid">
+        <div 
+          v-for="item in filteredProjects" 
+          :key="item.id" 
+          class="col-12 col-sm-6 col-lg-4 gallery-col"
+        >
+          <div class="gallery-card">
+            <!-- Photo Box with Click to Enlarge -->
+            <div class="gallery-photo-box" @click="openModal(item)">
+              <img :src="item.image" :alt="item.title" class="gallery-img" />
+              <div class="gallery-location-pill">
+                <span class="fa-solid fa-location-dot text-primary"></span>
+                <span>{{ item.location }}</span>
+              </div>
+              <div class="gallery-overlay-hint">
+                <span class="fa-solid fa-expand"></span>
+                <span>Lihat Foto Penuh</span>
               </div>
             </div>
-          </div>
 
-          <!-- Project Details Section (40% on desktop) -->
-          <div class="col-lg-5">
-            <div class="showcase-info-box">
-              <div class="showcase-category">
-                {{ currentProject.category }}
-              </div>
+            <!-- Card Bottom Bar: Title & Direct WhatsApp Action -->
+            <div class="gallery-card-body">
+              <span class="gallery-cat-tag">{{ item.category }}</span>
+              <h4 class="gallery-card-title">{{ item.title }}</h4>
 
-              <h3 class="showcase-title">
-                {{ currentProject.title }}
-              </h3>
-
-              <p class="showcase-desc">
-                {{ currentProject.description }}
-              </p>
-              
-              <div class="showcase-specs-list">
-                <div class="showcase-spec-item" v-for="(spec, sIdx) in currentProject.specs" :key="sIdx">
-                  <span class="fa-solid fa-circle-check text-primary" style="margin-right: 8px;"></span>
-                  <span>{{ spec }}</span>
-                </div>
-              </div>
-
-              <div class="showcase-action">
+              <div class="gallery-card-footer">
                 <a 
-                  class="button button-primary showcase-cta-btn" 
-                  :href="currentProject.waLink" 
+                  class="button button-primary gallery-wa-btn" 
+                  :href="getWaLink(item)" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
@@ -93,17 +69,57 @@
         </div>
       </div>
 
-      <!-- Thumbnails Selector Grid below showcase -->
-      <div class="thumbs-grid mt-4">
-        <div 
-          v-for="(proj, idx) in projects" 
-          :key="proj.id"
-          class="thumb-card"
-          :class="{ 'thumb-active': currentIndex === idx }"
-          @click="currentIndex = idx"
-        >
-          <img :src="proj.image" :alt="proj.title" class="thumb-photo" />
-          <div class="thumb-label">{{ proj.shortName }}</div>
+      <!-- Visual Bottom Banner: Kirim Foto dari Pinterest/IG -->
+      <div class="portfolio-custom-banner">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-8 text-center text-lg-left mb-3 mb-lg-0">
+            <div class="custom-banner-icon d-none d-lg-flex">
+              <span class="fa-brands fa-pinterest text-primary"></span>
+            </div>
+            <div class="custom-banner-text">
+              <h4 class="custom-banner-title">Punya Contoh Model dari Pinterest atau Google?</h4>
+              <p class="custom-banner-desc">Kirim foto desain yang Anda sukai ke WhatsApp kami. Tim kami siap survey ke rumah dan hitung estimasi biayanya gratis!</p>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center text-lg-right">
+            <a 
+              class="button button-primary custom-banner-btn" 
+              href="https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20punya%20foto%20contoh%20model%20yang%20mau%20dikonsultasikan" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <span class="fa-brands fa-whatsapp"></span>
+              <span>Konsultasi via WA</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Lightbox Modal Preview -->
+    <div v-if="selectedProject" class="modal-backdrop" @click="closeModal">
+      <div class="modal-dialog-box" @click.stop>
+        <button class="modal-close-btn" @click="closeModal" aria-label="Tutup">
+          <span class="fa-solid fa-xmark"></span>
+        </button>
+        <img :src="selectedProject.image" :alt="selectedProject.title" class="modal-preview-img" />
+        <div class="modal-info-bar">
+          <div>
+            <div class="modal-project-title">{{ selectedProject.title }}</div>
+            <div class="modal-project-loc">
+              <span class="fa-solid fa-location-dot text-primary"></span>
+              {{ selectedProject.location }} &bull; {{ selectedProject.category }}
+            </div>
+          </div>
+          <a 
+            class="button button-primary modal-wa-btn" 
+            :href="getWaLink(selectedProject)" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <span class="fa-brands fa-whatsapp"></span>
+            <span>Konsultasi via WA</span>
+          </a>
         </div>
       </div>
     </div>
@@ -113,94 +129,104 @@
 <script setup>
 import { ref, computed } from 'vue'
 
-const currentIndex = ref(0)
+const activeCategory = ref('all')
+const selectedProject = ref(null)
+
+const categories = [
+  { key: 'all', label: 'Semua Foto' },
+  { key: 'kanopi', label: 'Kanopi' },
+  { key: 'pagar', label: 'Pagar & Gerbang' },
+  { key: 'kaca', label: 'Pintu & Partisi Kaca' }
+]
 
 const projects = [
   {
     id: 1,
-    shortName: 'Pagar Minimalis',
-    category: 'Metal Works &bull; Medan',
-    location: 'Proyek Selesai di Medan',
-    title: 'Pagar Minimalis Besi Hollow Galvanis Modern',
-    description: 'Pengerjaan pagar minimalis bahan besi hollow galvanis tebal anti-karat dengan finishing cat hitam matte tahan cuaca ekstrem. Konstruksi kokoh dan hasil pengelasan rapi presisi.',
-    specs: [
-      'Besi hollow galvanis tebal anti-karat',
-      'Cat epoxy tahan panas dan hujan',
-      'Kunci pengaman & bearing roda halus'
-    ],
-    image: '/images/chico/pagar 2.jpg',
-    waLink: 'https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20dengan%20proyek%20Pagar%20Minimalis%20di%20galeri'
+    catKey: 'kanopi',
+    category: 'Kanopi Kaca',
+    title: 'Kanopi Kaca Tempered Carport',
+    location: 'Medan Johor',
+    image: '/images/chico/atap 1.jpg'
   },
   {
     id: 2,
-    shortName: 'Kanopi Kaca Tempered',
-    category: 'Kanopi &bull; Deli Serdang',
-    location: 'Proyek Selesai di Deli Serdang',
-    title: 'Kanopi Kaca Tempered & Rangka Struktur Besi',
-    description: 'Struktur rangka kanopi besi galvanis kokoh dipadu atap kaca tempered berstandar keamanan SNI. Memberikan perlindungan maksimal dari panas dan hujan sekaligus menambah kemewahan fasad rumah.',
-    specs: [
-      'Kaca tempered SNI tahan benturan',
-      'Rangka besi hollow presisi tinggi',
-      'Talang air & sealant anti-bocor'
-    ],
-    image: '/images/chico/proyek-kanopi-modern.jpg',
-    waLink: 'https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20dengan%20proyek%20Kanopi%20Kaca%20di%20galeri'
+    catKey: 'kanopi',
+    category: 'Kanopi Modern',
+    title: 'Kanopi Rangka Gantung Minimalis',
+    location: 'Deli Tua – Marendal',
+    image: '/images/chico/proyek-kanopi-modern.jpg'
   },
   {
     id: 3,
-    shortName: 'Partisi Kaca Shower',
-    category: 'Glass (Kaca) &bull; Medan',
-    location: 'Proyek Interior Selesai di Medan',
-    title: 'Partisi Kaca Shower Tempered Mewah',
-    description: 'Pemasangan sekat kaca kamar mandi tempered presisi dengan engsel, pegangan, dan fitting stainless steel SUS 304 anti-karat. Menghadirkan suasana kamar mandi yang bersih, elegan, dan eksklusif.',
-    specs: [
-      'Kaca tempered 10mm standar SNI',
-      'Hardware stainless 304 anti-karat basah',
-      'Seal karet kedap air presisi'
-    ],
-    image: '/images/chico/shower 2.webp',
-    waLink: 'https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20dengan%20proyek%20Partisi%20Kaca%20Shower%20di%20galeri'
+    catKey: 'pagar',
+    category: 'Pagar Minimalis',
+    title: 'Pagar Besi Hollow Hitam Doff',
+    location: 'Komplek Tasbi, Medan',
+    image: '/images/chico/pagar 1.jpg'
   },
   {
     id: 4,
-    shortName: 'Pagar Laser Cutting',
-    category: 'Laser Cutting Art &bull; Medan',
-    location: 'Proyek Selesai di Medan',
-    title: 'Pagar Plat Besi Motif Laser Cutting Artistik',
-    description: 'Pagar hunian eksklusif dengan motif laser cutting komputer presisi tinggi. Desain ornamen modern yang memberikan privasi optimal serta tampilan arsitektur fasad mewah.',
-    specs: [
-      'Plat besi cutting CNC presisi tinggi',
-      'Motif kustom sesuai selera pelanggan',
-      'Cat oven tahan gores & anti-karat'
-    ],
-    image: '/images/chico/pagar 3.webp',
-    waLink: 'https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20tertarik%20dengan%20proyek%20Pagar%20Laser%20Cutting%20di%20galeri'
+    catKey: 'pagar',
+    category: 'Pagar Kombinasi',
+    title: 'Pagar Hollow Galvanis & Plat',
+    location: 'Ringroad, Medan',
+    image: '/images/chico/pagar 2.jpg'
   },
   {
     id: 5,
-    shortName: 'Workshop Fabrikasi',
-    category: 'Workshop Chico Mandiri &bull; Medan',
-    location: 'Workshop Jl. Roso No. 8, Medan',
-    title: 'Fabrikasi Bengkel Las & Quality Control Presisi',
-    description: 'Setiap pesanan dirakit dan difabrikasi di workshop kami di Jl. Roso No. 8, Deli Tua – Marendal. Seluruh titik sambungan las diuji kekuatannya sebelum pemasangan ke lokasi Anda.',
-    specs: [
-      'Pengelasan presisi standar konstruksi',
-      'Pemeriksaan mutu sebelum pemasangan',
-      'Garansi resmi kekuatan struktur'
-    ],
-    image: '/images/chico/workshop-las.jpg',
-    waLink: 'https://wa.me/6281376933039?text=Halo%20Bengkel%20Las%20Chico%20Mandiri,%20saya%20ingin%20konsultasi%20langsung%20ke%20workshop'
+    catKey: 'pagar',
+    category: 'Pagar Gerbang',
+    title: 'Pagar Gerbang Dorong Minimalis',
+    location: 'Setia Budi, Medan',
+    image: '/images/chico/pagar 3.webp'
+  },
+  {
+    id: 6,
+    catKey: 'kaca',
+    category: 'Pintu Aluminium',
+    title: 'Pintu Sliding Kaca & Aluminium',
+    location: 'Cemara Asri, Medan',
+    image: '/images/chico/pintu 1.webp'
+  },
+  {
+    id: 7,
+    catKey: 'kaca',
+    category: 'Partisi Kaca',
+    title: 'Partisi Shower Box Kaca Tempered',
+    location: 'Krakatau, Medan',
+    image: '/images/chico/shower 1.jpg'
+  },
+  {
+    id: 8,
+    catKey: 'kaca',
+    category: 'Shower Screen',
+    title: 'Partisi Kamar Mandi Frameless 10mm',
+    location: 'Helvetia, Medan',
+    image: '/images/chico/shower 2.webp'
   }
 ]
 
-const currentProject = computed(() => projects[currentIndex.value] || projects[0])
+const filteredProjects = computed(() => {
+  if (activeCategory.value === 'all') return projects
+  return projects.filter(p => p.catKey === activeCategory.value)
+})
 
-function nextProject() {
-  currentIndex.value = (currentIndex.value + 1) % projects.length
+function getCategoryCount(key) {
+  if (key === 'all') return projects.length
+  return projects.filter(p => p.catKey === key).length
 }
 
-function prevProject() {
-  currentIndex.value = (currentIndex.value - 1 + projects.length) % projects.length
+function getWaLink(item) {
+  const text = `Halo Bengkel Las Chico Mandiri, saya tertarik dengan model foto ini: ${item.title} (${item.location}). Berapa perkiraan biaya pengerjaannya?`
+  return `https://wa.me/6281376933039?text=${encodeURIComponent(text)}`
+}
+
+function openModal(item) {
+  selectedProject.value = item
+}
+
+function closeModal() {
+  selectedProject.value = null
 }
 </script>
 
@@ -211,289 +237,364 @@ function prevProject() {
   border-bottom: 1px solid var(--border);
 }
 
-.portfolio-header-row {
-  margin-bottom: 30px;
+.section-heading {
+  margin-bottom: 34px;
 }
 
 .portfolio-title {
+  color: var(--foreground);
   font-weight: 700;
   font-size: clamp(24px, 3vw, 34px);
   letter-spacing: -0.03em;
-  color: var(--foreground);
   margin-bottom: 8px;
 }
 
 .portfolio-desc {
   color: var(--muted-foreground);
   font-size: 15.5px;
-  max-width: 600px;
-  line-height: 1.6;
+  max-width: 580px;
+  line-height: 1.55;
   letter-spacing: -0.01em;
-  margin: 0;
+  margin: 0 auto;
 }
 
-/* Navigation Controls (§1, §4) */
-.portfolio-nav-controls {
-  display: inline-flex;
-  align-items: center;
+/* Category Filter Pills (Apple Segmented Style) */
+.portfolio-filters-wrap {
+  display: flex;
   justify-content: center;
-  gap: 10px;
+  margin-bottom: 34px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px;
 }
 
-.portfolio-nav-btn {
-  width: 40px;
-  height: 40px;
+.portfolio-filter-nav {
+  display: inline-flex;
+  gap: 6px;
+  background: var(--secondary);
+  padding: 4px;
   border-radius: var(--radius-full);
-  background: var(--card);
   border: 1px solid var(--border);
-  color: var(--foreground);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
+}
+
+.filter-pill-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--muted-foreground);
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   cursor: pointer;
   transition: all 0.2s var(--spring-damp);
-  box-shadow: var(--shadow-sm);
-}
-
-.portfolio-nav-btn:hover {
-  background: #ffffff;
-  border-color: rgba(0, 0, 0, 0.15);
-  color: var(--primary);
-  transform: translateY(-1px);
-}
-
-.portfolio-nav-btn:active {
-  transform: scale(0.93) !important;
-  transition: transform 100ms var(--spring-fast);
-}
-
-.portfolio-counter {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 13.5px;
-  color: var(--muted-foreground);
-  min-width: 48px;
-  text-align: center;
-}
-
-/* Main Showcase Card (§12) */
-.showcase-card {
-  background: var(--card);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-lg);
-  transition: box-shadow 0.3s var(--spring-damp);
-}
-
-.showcase-media-box {
-  position: relative;
-  width: 100%;
-  height: 330px;
-  background: var(--secondary);
-  overflow: hidden;
-}
-
-@media (min-width: 992px) {
-  .showcase-media-box {
-    height: 100%;
-    min-height: 470px;
-  }
-}
-
-.showcase-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.showcase-image-tag {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  padding: 7px 14px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-full);
-  color: var(--foreground);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  box-shadow: var(--shadow-sm);
-}
-
-.showcase-info-box {
-  padding: 34px 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  background: var(--card);
-  color: var(--foreground);
-}
-
-@media (min-width: 992px) {
-  .showcase-info-box {
-    padding: 42px 36px;
-  }
-}
-
-.showcase-category {
-  font-family: var(--font-sans);
-  font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--primary);
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.showcase-title {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: clamp(21px, 2.3vw, 26px);
-  letter-spacing: -0.025em;
-  line-height: 1.25;
-  color: var(--foreground);
-  margin-bottom: 12px;
-}
-
-.showcase-desc {
-  font-size: 14.5px;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-  color: var(--muted-foreground);
-  margin-bottom: 22px;
-}
-
-.showcase-specs-list {
-  margin-bottom: 26px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.showcase-spec-item {
-  font-size: 13.5px;
-  letter-spacing: -0.01em;
-  color: var(--foreground);
-  display: flex;
-  align-items: center;
-}
-
-.showcase-action {
-  margin-top: auto;
-}
-
-.showcase-cta-btn {
-  width: 100%;
+  outline: none;
   white-space: nowrap;
 }
 
-@media (max-width: 767px) {
-  .portfolio-header-row {
-    text-align: center;
-  }
-
-  .portfolio-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .showcase-info-box {
-    text-align: center;
-    padding: 28px 20px;
-  }
-
-  .showcase-specs-list {
-    text-align: left;
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .showcase-cta-btn {
-    max-width: 280px;
-    margin: 0 auto;
-  }
+.filter-pill-btn:hover {
+  color: var(--foreground);
 }
 
-/* Thumbnails Grid */
-.thumbs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-
-@media (min-width: 576px) {
-  .thumbs-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 992px) {
-  .thumbs-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
-  }
-}
-
-.thumb-card {
-  position: relative;
-  height: 94px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  cursor: pointer;
-  border: 1px solid var(--border);
-  transition: all 0.2s var(--spring-damp);
-  background: var(--card);
-  box-shadow: var(--shadow-sm);
-}
-
-.thumb-card:hover {
-  border-color: rgba(0, 0, 0, 0.18);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.thumb-card:active {
+.filter-pill-btn:active {
   transform: scale(0.96);
   transition: transform 100ms var(--spring-fast);
 }
 
-.thumb-active {
-  border-color: var(--primary) !important;
-  box-shadow: 0 0 0 2.5px rgba(0, 113, 227, 0.35) !important;
+.filter-active {
+  background: #ffffff !important;
+  color: var(--foreground) !important;
+  font-weight: 600 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
 }
 
-.thumb-photo {
+/* Photo Gallery Grid */
+.gallery-grid {
+  row-gap: 24px;
+}
+
+.gallery-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp);
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.gallery-photo-box {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  background: var(--secondary);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .gallery-photo-box {
+    height: 250px;
+  }
+}
+
+.gallery-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.6s var(--spring-damp);
 }
 
-.thumb-label {
+.gallery-photo-box:hover .gallery-img {
+  transform: scale(1.05);
+}
+
+.gallery-location-pill {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5px 8px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: var(--foreground);
+  top: 12px;
+  left: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
   font-size: 11px;
   font-weight: 600;
+  color: var(--foreground);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.gallery-overlay-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(29, 29, 31, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  color: #ffffff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.gallery-photo-box:hover .gallery-overlay-hint {
+  opacity: 1;
+}
+
+.gallery-card-body {
+  padding: 20px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gallery-cat-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.gallery-card-title {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--foreground);
+  line-height: 1.3;
+  margin-bottom: 16px;
+}
+
+.gallery-card-footer {
+  margin-top: auto;
+}
+
+.gallery-wa-btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 13px !important;
+  padding: 9px 16px !important;
+}
+
+/* Custom Banner below gallery */
+.portfolio-custom-banner {
+  margin-top: 48px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s var(--spring-damp);
+}
+
+.portfolio-custom-banner:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.custom-banner-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 113, 227, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-right: 18px;
+  flex-shrink: 0;
+}
+
+.custom-banner-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.custom-banner-title {
+  color: var(--foreground);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.custom-banner-desc {
+  color: var(--muted-foreground);
+  font-size: 14px;
   letter-spacing: -0.01em;
-  text-align: center;
+  margin: 0;
+}
+
+.custom-banner-btn {
   white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .portfolio-custom-banner {
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .custom-banner-btn {
+    width: 100%;
+    max-width: 280px;
+    margin: 14px auto 0;
+  }
+}
+
+/* Lightbox Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-dialog-box {
+  position: relative;
+  background: var(--card);
+  border-radius: var(--radius-xl);
   overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 720px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  font-size: 16px;
+  transition: transform 0.15s ease;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.08);
+}
+
+.modal-preview-img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  background: #000000;
+}
+
+.modal-info-bar {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: var(--card);
   border-top: 1px solid var(--border);
+}
+
+.modal-project-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--foreground);
+}
+
+.modal-project-loc {
+  font-size: 12.5px;
+  color: var(--muted-foreground);
+  margin-top: 2px;
+}
+
+.modal-wa-btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 575px) {
+  .modal-info-bar {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .modal-wa-btn {
+    width: 100%;
+  }
 }
 </style>

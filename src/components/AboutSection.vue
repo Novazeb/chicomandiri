@@ -1,85 +1,79 @@
 <template>
   <section class="about-section section-lg bg-muted" id="about">
     <div class="container">
-      <!-- Section Header -->
+      <!-- Section Header: Punchy, Low Text -->
       <div class="section-heading text-center">
         <h2 class="section-title">
-          Keunggulan Layanan Chico Mandiri
+          Kenapa Percayakan ke Chico Mandiri?
         </h2>
         <p class="section-subtitle">
-          Standar material dan komitmen pengerjaan yang menjamin kekuatan serta estetika konstruksi rumah Anda.
+          Kualitas material pilihan, tukang las berpengalaman, dan komitmen hasil pengerjaan rapi bergaransi.
         </p>
       </div>
 
-      <!-- 3-Column Trust Proposition Cards -->
+      <!-- 3-Column Visual Photo Proof Cards -->
       <div class="row row-30 justify-content-center trust-grid">
-        <!-- Card 1 -->
+        <!-- Card 1: Material & Workshop -->
         <div class="col-md-6 col-lg-4">
           <div class="trust-card">
-            <div class="trust-icon-box">
-              <span class="fa-solid fa-shield-halved"></span>
+            <div class="trust-img-box">
+              <img src="/images/chico/workshop-las.jpg" alt="Workshop Las Chico Mandiri" class="trust-photo" />
+              <span class="trust-img-pill">Bahan Pilihan SNI</span>
             </div>
-            <h3 class="trust-card-title">Material Berkualitas SNI</h3>
-            <p class="trust-card-desc">
-              Menggunakan besi hollow galvanis tebal anti-karat, kaca tempered standar keamanan SNI, dan aksesoris stainless SUS 304 tahan cuaca ekstrem.
-            </p>
-            <div class="trust-features-wrap">
+            <div class="trust-card-body">
+              <h3 class="trust-card-title">Besi Galvanis Anti-Karat</h3>
               <ul class="trust-card-features">
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Besi hollow tebal anti-korosi</li>
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Kaca tempered tahan benturan</li>
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Cat epoxy oven tahan cuaca</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Hollow galvanis tebal standar SNI</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Kaca tempered tahan benturan keras</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Lapisan cat oven anti-karat &amp; cuaca</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Card 2: Free Survey -->
         <div class="col-md-6 col-lg-4">
           <div class="trust-card">
-            <div class="trust-icon-box">
-              <span class="fa-solid fa-ruler-combined"></span>
+            <div class="trust-img-box">
+              <img src="/images/chico/atap 1.jpg" alt="Pemasangan Kanopi di Rumah" class="trust-photo" />
+              <span class="trust-img-pill">100% Gratis</span>
             </div>
-            <h3 class="trust-card-title">Gratis Survey Lokasi</h3>
-            <p class="trust-card-desc">
-              Layanan ukur langsung ke rumah dan konsultasi desain gratis tanpa dipungut biaya untuk area Medan, Deli Serdang, dan sekitarnya.
-            </p>
-            <div class="trust-features-wrap">
+            <div class="trust-card-body">
+              <h3 class="trust-card-title">Gratis Survey &amp; Ukur Lokasi</h3>
               <ul class="trust-card-features">
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Pengukuran presisi di lokasi</li>
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Konsultasi pemilihan material</li>
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Estimasi biaya transparan</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Langsung datang ke rumah Anda</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Pengukuran presisi &amp; konsultasi model</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Estimasi biaya transparan tanpa biaya tersembunyi</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 3: Warranty & Neatness -->
         <div class="col-md-6 col-lg-4">
           <div class="trust-card">
-            <div class="trust-icon-box">
-              <span class="fa-solid fa-certificate"></span>
+            <div class="trust-img-box">
+              <img src="/images/chico/pagar 1.jpg" alt="Pagar Minimalis Rapi" class="trust-photo" />
+              <span class="trust-img-pill">Garansi Resmi</span>
             </div>
-            <h3 class="trust-card-title">Garansi Resmi Struktur</h3>
-            <p class="trust-card-desc">
-              Jaminan kekuatan sambungan las presisi, kekokohan rangka, dan kerapian finishing dengan garansi resmi bengkel.
-            </p>
-            <div class="trust-features-wrap">
+            <div class="trust-card-body">
+              <h3 class="trust-card-title">Pengerjaan Rapi &amp; Bergaransi</h3>
               <ul class="trust-card-features">
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Teknisi welder berpengalaman</li>
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Sambungan las rapat &amp; halus</li>
-                <li><span class="fa-solid fa-circle-check text-primary"></span>Jaminan kepuasan hasil akhir</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Tukang las ahli berpengalaman 10+ thn</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Sambungan las rapat, kokoh, dan halus</li>
+                <li><span class="fa-solid fa-circle-check text-primary"></span>Bisa custom sesuai foto Pinterest / IG</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Action Banner (§12 Materials & Depth) -->
+      <!-- Action Banner: Photo Proof CTA (§12) -->
       <div class="trust-cta-banner">
         <div class="row align-items-center justify-content-between">
           <div class="col-lg-8 text-center text-lg-left mb-3 mb-lg-0">
-            <h4 class="cta-banner-title">Butuh Pengukuran Kanopi, Pagar, atau Partisi Kaca?</h4>
-            <p class="cta-banner-desc">Jadwalkan survey gratis langsung ke rumah Anda di wilayah Medan &amp; Deli Serdang.</p>
+            <h4 class="cta-banner-title">Mau Survey Gratis atau Tanya Perkiraan Biaya?</h4>
+            <p class="cta-banner-desc">Kirim ukuran atau contoh model yang Anda inginkan ke WhatsApp kami sekarang.</p>
           </div>
           <div class="col-lg-4 text-center text-lg-right">
             <a 
@@ -109,7 +103,7 @@
 }
 
 .section-heading {
-  margin-bottom: 44px;
+  margin-bottom: 38px;
 }
 
 .section-title {
@@ -125,7 +119,7 @@
   font-size: 15.5px;
   max-width: 580px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.55;
   letter-spacing: -0.01em;
 }
 
@@ -133,43 +127,65 @@
   row-gap: 24px;
 }
 
+/* Visual Photo Proof Cards */
 .trust-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 34px 28px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
-  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp), border-color 0.2s ease;
+  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp);
   box-shadow: var(--shadow-sm);
 }
 
 .trust-card:hover {
-  border-color: rgba(0, 0, 0, 0.12);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
-/* Centered Icon Container with Apple Soft Blue Accent (§12) */
-.trust-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(0, 113, 227, 0.08);
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  margin: 0 auto 20px;
-  transition: transform 0.2s var(--spring-fast);
+.trust-img-box {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  background: var(--secondary);
+  overflow: hidden;
 }
 
-.trust-card:hover .trust-icon-box {
+.trust-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--spring-damp);
+}
+
+.trust-card:hover .trust-photo {
   transform: scale(1.05);
+}
+
+.trust-img-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--foreground);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  letter-spacing: -0.01em;
+}
+
+.trust-card-body {
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .trust-card-title {
@@ -178,27 +194,8 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--foreground);
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   line-height: 1.3;
-  text-align: center;
-}
-
-.trust-card-desc {
-  font-size: 14px;
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-  color: var(--muted-foreground);
-  margin-bottom: 22px;
-  text-align: center;
-}
-
-.trust-features-wrap {
-  width: 100%;
-  margin-top: auto;
-  padding-top: 18px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: center;
 }
 
 .trust-card-features {
@@ -207,26 +204,32 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
-  text-align: left;
+  gap: 11px;
 }
 
 .trust-card-features li {
-  font-size: 13px;
+  font-size: 13.5px;
   letter-spacing: -0.01em;
   color: var(--secondary-foreground);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 9px;
+  line-height: 1.4;
+}
+
+.trust-card-features li .fa-circle-check {
+  margin-top: 3px;
+  font-size: 13px;
+  flex-shrink: 0;
 }
 
 /* Bottom CTA Banner with Apple Refined Depth (§12) */
 .trust-cta-banner {
-  margin-top: 44px;
+  margin-top: 40px;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 28px 32px;
+  padding: 26px 30px;
   box-shadow: var(--shadow-sm);
   transition: box-shadow 0.25s var(--spring-damp);
 }
