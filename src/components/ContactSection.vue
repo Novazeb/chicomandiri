@@ -180,29 +180,31 @@ function submitContactToWa() {
 <style scoped>
 .contact-section {
   position: relative;
-  background-color: var(--background);
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .contact-grid {
   row-gap: 28px;
 }
 
-/* Left Workshop Card - Apple Squircle & Ambient Depth */
+/* Left Workshop Card - Glassmorphic */
 .workshop-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 30px rgba(31, 38, 135, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   transition: box-shadow 0.3s var(--spring-damp), transform 0.3s var(--spring-damp);
 }
 
 .workshop-card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 40px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .workshop-photo-wrap {
@@ -273,13 +275,14 @@ function submitContactToWa() {
 }
 
 .meta-icon {
-  width: 46px;
-  height: 46px;
-  min-width: 46px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
   border-radius: 14px;
-  background: rgba(0, 113, 227, 0.08);
+  background: rgba(0, 113, 227, 0.09);
   color: var(--primary);
-  border: 1px solid rgba(0, 113, 227, 0.16);
+  border: 1px solid rgba(0, 113, 227, 0.2);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -325,21 +328,23 @@ function submitContactToWa() {
   margin-top: auto;
 }
 
-/* Right Form Card - Apple Elevated Surface */
+/* Right Form Card - Glassmorphic */
 .form-container-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px) saturate(190%);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   padding: 34px 30px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   transition: box-shadow 0.3s var(--spring-damp);
 }
 
 .form-container-card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 40px rgba(0, 113, 227, 0.1), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 @media (max-width: 575px) {

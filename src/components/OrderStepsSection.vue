@@ -76,8 +76,8 @@
 <style scoped>
 .steps-section {
   position: relative;
-  background-color: var(--background);
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .section-heading {
@@ -105,10 +105,13 @@
   row-gap: 24px;
 }
 
+/* Glassmorphic Step Card */
 .step-card {
   position: relative;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   padding: 34px 26px;
   height: 100%;
@@ -116,13 +119,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp);
+  box-shadow: 0 8px 30px rgba(31, 38, 135, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp), border-color 0.25s ease;
 }
 
 .step-card:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 1);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 40px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .step-num-badge {
@@ -141,8 +146,10 @@
   width: 58px;
   height: 58px;
   border-radius: 16px;
-  background: rgba(0, 113, 227, 0.08);
+  background: rgba(0, 113, 227, 0.1);
   color: var(--primary);
+  border: 1px solid rgba(0, 113, 227, 0.2);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   justify-content: center;

@@ -139,9 +139,9 @@ const slides = [
 <style scoped>
 .hero-section {
   position: relative;
-  background-color: var(--background);
+  background-color: transparent;
   padding: 84px 0 90px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   overflow: hidden;
 }
 
@@ -245,22 +245,27 @@ const slides = [
   }
 }
 
-/* Trust Strip: Responsive 3-Column Clean Layout */
+/* Trust Strip: Glassmorphic 3-Column Pill Strip */
 .hero-trust-strip {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: center;
   gap: 18px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   text-align: center;
 }
 
 @media (max-width: 767px) {
   .hero-trust-strip {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding-top: 20px;
+    gap: 8px;
+    padding: 14px 10px;
   }
 
   .trust-divider {
@@ -278,14 +283,14 @@ const slides = [
 .trust-num {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 18px;
   color: var(--primary);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .trust-label {
-  font-size: 11.5px;
+  font-size: 11px;
   color: var(--muted-foreground);
   margin-top: 4px;
   line-height: 1.35;
@@ -294,18 +299,24 @@ const slides = [
 
 .trust-divider {
   width: 1px;
-  height: 28px;
-  background: var(--border);
+  height: 26px;
+  background: rgba(0, 0, 0, 0.08);
 }
 
-/* Right Apple Visual Frame (§12) */
+/* Right Glassmorphic Showcase Card */
 .hero-card-frame {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 16px 45px rgba(31, 38, 135, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   transition: transform 0.3s var(--spring-damp), box-shadow 0.3s var(--spring-damp);
+}
+
+.hero-card-frame:hover {
+  box-shadow: 0 22px 55px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .hero-media-wrap {
@@ -346,16 +357,16 @@ const slides = [
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-radius: var(--radius-full);
   font-size: 11.5px;
   font-weight: 600;
   color: var(--foreground);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.95);
 }
 
 .hero-media-caption {
@@ -364,7 +375,7 @@ const slides = [
   left: 0;
   right: 0;
   padding: 24px 20px 18px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(29, 29, 31, 0.9) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(20, 25, 35, 0.88) 100%);
   color: #ffffff;
   text-align: left;
 }
@@ -380,23 +391,25 @@ const slides = [
 
 .hero-caption-sub {
   font-size: 12px;
-  color: #d2d2d7;
+  color: #e2e8f0;
   line-height: 1.45;
 }
 
-/* Apple Segmented Control (§4, §6) */
+/* Glassmorphic Segmented Control */
 .hero-segmented-wrap {
-  padding: 8px 12px;
-  background: #ffffff;
-  border-top: 1px solid var(--border);
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .hero-slide-switchers {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background: var(--secondary);
+  background: rgba(0, 0, 0, 0.04);
   padding: 3px;
-  border-radius: 11px;
+  border-radius: 12px;
   gap: 3px;
 }
 
@@ -427,9 +440,9 @@ const slides = [
 }
 
 .switch-active {
-  color: var(--foreground) !important;
-  font-weight: 600 !important;
-  background: #ffffff !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  color: var(--primary) !important;
+  font-weight: 700 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 1px #ffffff !important;
 }
 </style>

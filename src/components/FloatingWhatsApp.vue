@@ -28,22 +28,25 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #25d366;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.92) 0%, rgba(18, 140, 126, 0.95) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.45);
   color: #ffffff !important;
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 13.5px;
   letter-spacing: -0.01em;
-  padding: 10px 18px 10px 14px;
+  padding: 11px 20px 11px 16px;
   border-radius: var(--radius-full);
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4), 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.5);
   text-decoration: none !important;
   transition: transform 0.2s var(--spring-damp), box-shadow 0.2s var(--spring-damp);
 }
 
 .floating-wa-btn:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5), inset 0 1px 1px rgba(255, 255, 255, 0.7);
   color: #ffffff !important;
 }
 

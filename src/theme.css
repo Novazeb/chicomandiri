@@ -1,41 +1,54 @@
 :root {
-  /* Apple Design System Colors */
-  --card: #ffffff;
+  /* Glassmorphism Color & Material Palette */
+  --card: rgba(255, 255, 255, 0.75);
+  --card-elevated: rgba(255, 255, 255, 0.88);
   --ring: #0071e3;
-  --input: #e5e5ea;
-  --muted: #f5f5f7;
-  --accent: #f0f7ff;
-  --border: rgba(0, 0, 0, 0.08);
-  --border-light: rgba(0, 0, 0, 0.04);
+  --input: rgba(255, 255, 255, 0.75);
+  --muted: rgba(244, 246, 251, 0.65);
+  --accent: rgba(224, 242, 254, 0.7);
+  --border: rgba(255, 255, 255, 0.85);
+  --border-subtle: rgba(255, 255, 255, 0.5);
   --radius: 12px;
   --radius-lg: 18px;
   --radius-xl: 22px;
   --radius-full: 980px;
 
-  /* Apple Palette */
+  /* Glassmorphic Material Tokens */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-hover: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.85);
+  --glass-border-subtle: rgba(255, 255, 255, 0.5);
+  --glass-blur: 16px;
+  --glass-saturate: 180%;
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(0, 113, 227, 0.12), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+  --glass-shadow-lg: 0 20px 50px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+
+  /* Apple & Indigo Palette */
   --chart-1: #0071e3;
   --chart-2: #0077ed;
   --chart-3: #0056b3;
   --chart-4: #003d80;
   --chart-5: #00224d;
-  --popover: #ffffff;
+  --popover: rgba(255, 255, 255, 0.85);
   --primary: #0071e3;
   --primary-hover: #0077ed;
-  --sidebar: rgba(255, 255, 255, 0.92);
+  --primary-gradient: linear-gradient(135deg, #0071e3 0%, #0056b3 100%);
+  --sidebar: rgba(255, 255, 255, 0.85);
   --font-mono: "JetBrains Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", system-ui, sans-serif;
-  --secondary: #f5f5f7;
-  --background: #ffffff;
+  --secondary: rgba(245, 245, 247, 0.7);
+  --background: #f4f6fb;
   --foreground: #1d1d1f;
-  --muted-foreground: #6e6e73;
-  --secondary-foreground: #424245;
+  --muted-foreground: #55555c;
+  --secondary-foreground: #38383c;
   --accent-foreground: #0071e3;
   --destructive: #ff3b30;
   --destructive-foreground: #ffffff;
 
   --sidebar-ring: #0071e3;
-  --sidebar-accent: #f0f7ff;
-  --sidebar-border: rgba(0, 0, 0, 0.08);
+  --sidebar-accent: rgba(224, 242, 254, 0.7);
+  --sidebar-border: rgba(255, 255, 255, 0.8);
   --card-foreground: #1d1d1f;
   --sidebar-primary: #0071e3;
   --popover-foreground: #1d1d1f;
@@ -44,79 +57,70 @@
   --sidebar-accent-foreground: #0071e3;
   --sidebar-primary-foreground: #ffffff;
 
-  /* Aliases & helper mappings */
-  --primary-color: var(--primary);
-  --clean-bg: var(--background);
-
-  /* Apple Fluid Motion Springs */
+  /* Motion */
   --spring-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.15);
   --spring-damp: cubic-bezier(0.16, 1, 0.3, 1);
   --spring-fast: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  /* Apple Ambient Depth */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 16px -2px rgba(0, 0, 0, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 12px 32px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.03);
+  /* Shadows */
+  --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  --shadow-md: 0 8px 32px rgba(31, 38, 135, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .dark {
-  --card: #1c1c1e;
+  --card: rgba(30, 30, 35, 0.75);
+  --card-elevated: rgba(40, 40, 48, 0.88);
   --ring: #0a84ff;
-  --input: #38383a;
-  --muted: #000000;
-  --accent: #1c2738;
-  --border: rgba(255, 255, 255, 0.12);
-  --border-light: rgba(255, 255, 255, 0.06);
-  --radius: 12px;
-  --radius-lg: 18px;
-  --radius-xl: 22px;
-  --radius-full: 980px;
+  --input: rgba(45, 45, 55, 0.75);
+  --muted: rgba(20, 20, 25, 0.65);
+  --accent: rgba(30, 50, 80, 0.7);
+  --border: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
 
-  --chart-1: #0a84ff;
-  --chart-2: #409cff;
-  --chart-3: #64b5f6;
-  --chart-4: #90caf9;
-  --chart-5: #bbdefb;
-  --popover: #1c1c1e;
+  --glass-bg: rgba(30, 30, 35, 0.75);
+  --glass-bg-hover: rgba(40, 40, 48, 0.88);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-border-subtle: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+  --glass-shadow-hover: 0 16px 40px 0 rgba(10, 132, 255, 0.2), inset 0 1px 2px 0 rgba(255, 255, 255, 0.15);
+
   --primary: #0a84ff;
   --primary-hover: #409cff;
-  --sidebar: rgba(28, 28, 30, 0.94);
-  --secondary: #2c2c2e;
-  --background: #000000;
+  --sidebar: rgba(25, 25, 30, 0.88);
+  --secondary: rgba(40, 40, 45, 0.7);
+  --background: #0f1117;
   --foreground: #f5f5f7;
   --muted-foreground: #a1a1a6;
   --secondary-foreground: #d1d1d6;
   --accent-foreground: #64b5f6;
-  --destructive: #ff453a;
-  --destructive-foreground: #ffffff;
-
-  --sidebar-ring: #0a84ff;
-  --sidebar-accent: #1c2738;
-  --sidebar-border: rgba(255, 255, 255, 0.12);
-  --card-foreground: #f5f5f7;
-  --sidebar-primary: #0a84ff;
-  --popover-foreground: #f5f5f7;
-  --primary-foreground: #ffffff;
-  --sidebar-foreground: #f5f5f7;
-  --sidebar-accent-foreground: #64b5f6;
-  --sidebar-primary-foreground: #ffffff;
 }
 
-/* 1. Global Reset & Apple Typography Foundations (§15) */
+/* 1. Global Reset & Ambient Glass Canvas */
 *, *::before, *::after {
   text-shadow: none !important;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+body, .page {
   font-family: var(--font-sans) !important;
   color: var(--foreground);
-  background-color: var(--background);
+  background-color: #f4f6fb;
+  background-image: 
+    radial-gradient(circle at 10% 12%, rgba(56, 189, 248, 0.16) 0%, transparent 42%),
+    radial-gradient(circle at 90% 18%, rgba(99, 102, 241, 0.13) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 15% 82%, rgba(59, 130, 246, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 85% 88%, rgba(168, 85, 247, 0.1) 0%, transparent 45%);
+  background-attachment: fixed;
+  background-size: 100% 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.012em;
   line-height: 1.55;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
 }
 
 /* Suppress all obsolete status bars and template counters */
@@ -134,7 +138,7 @@ body {
 
 /* 2. Color Utility Tokens */
 .bg-background {
-  background-color: var(--background) !important;
+  background-color: transparent !important;
 }
 
 .bg-card {
@@ -142,7 +146,7 @@ body {
 }
 
 .bg-muted {
-  background-color: var(--muted) !important;
+  background-color: transparent !important;
 }
 
 .bg-secondary {
@@ -173,7 +177,7 @@ body {
   border-color: var(--border) !important;
 }
 
-/* 3. Typography Optical Sizing (§15) */
+/* 3. Typography Optical Sizing */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans) !important;
   color: var(--foreground);
@@ -194,7 +198,7 @@ h3 {
   letter-spacing: -0.025em;
 }
 
-/* 4. Translucent Floating Chrome (§12) */
+/* 4. Translucent Frosted Glass Navbar Chrome */
 .rd-navbar-wrap {
   position: relative;
   z-index: 1080;
@@ -210,11 +214,11 @@ h3 {
   justify-content: space-between !important;
   padding: 0 20px !important;
   height: 64px !important;
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(20px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-  border-bottom: 1px solid var(--border) !important;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03) !important;
+  background: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(24px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), inset 0 -1px 0 rgba(255, 255, 255, 0.5) !important;
   z-index: 1085 !important;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
@@ -249,7 +253,7 @@ h3 {
   min-width: 38px !important;
   object-fit: contain !important;
   border-radius: 10px !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
   flex-shrink: 0 !important;
 }
 
@@ -303,7 +307,7 @@ h3 {
   border-radius: 2px !important;
 }
 
-/* Translucent Drawer Sheet (§12) */
+/* Translucent Drawer Sheet */
 .rd-navbar-fixed .rd-navbar-nav-wrap {
   position: fixed !important;
   left: 0 !important;
@@ -313,11 +317,11 @@ h3 {
   width: 285px !important;
   max-width: 85vw !important;
   z-index: 1084 !important;
-  background: rgba(255, 255, 255, 0.88) !important;
-  backdrop-filter: blur(25px) saturate(190%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(190%) !important;
-  border-right: 1px solid var(--border) !important;
-  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.08) !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.8) !important;
+  box-shadow: 6px 0 30px rgba(0, 0, 0, 0.08) !important;
   padding: 16px 0 28px 0 !important;
   overflow-y: auto !important;
   -webkit-overflow-scrolling: touch !important;
@@ -354,14 +358,15 @@ h3 {
 .rd-navbar-fixed .rd-nav-item.active .rd-nav-link,
 .rd-navbar-fixed .rd-nav-link:hover {
   color: var(--primary) !important;
-  background: rgba(0, 113, 227, 0.08) !important;
+  background: rgba(0, 113, 227, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
   font-weight: 600 !important;
 }
 
 .rd-navbar-fixed .contacts-classic {
   padding: 16px 20px 0 !important;
   margin-top: 14px !important;
-  border-top: 1px solid var(--border) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.6) !important;
 }
 
 .contacts-classic-text {
@@ -372,20 +377,21 @@ h3 {
   text-decoration: none !important;
 }
 
-/* 5. Tactile Response Buttons (§1, §4) */
+/* 5. Glassmorphic Buttons */
 .button-primary,
 .button-primary:focus {
-  background-color: var(--primary) !important;
-  border: 1px solid var(--primary) !important;
-  color: var(--primary-foreground) !important;
+  background: linear-gradient(135deg, #0071e3 0%, #0056b3 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
   font-family: var(--font-sans) !important;
   font-weight: 600 !important;
   font-size: 14px !important;
   letter-spacing: -0.015em !important;
   padding: 11px 22px !important;
   border-radius: var(--radius-full) !important;
-  box-shadow: 0 1px 3px rgba(0, 113, 227, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-  transition: all 0.2s var(--spring-damp) !important;
+  box-shadow: 0 4px 18px rgba(0, 113, 227, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+  transition: all 0.25s var(--spring-damp) !important;
   text-decoration: none !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -395,14 +401,13 @@ h3 {
 }
 
 .button-primary:hover {
-  background-color: var(--primary-hover) !important;
-  border-color: var(--primary-hover) !important;
-  color: var(--primary-foreground) !important;
-  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.35) !important;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #0077ed 0%, #0062cc 100%) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 25px rgba(0, 113, 227, 0.45), inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
+  transform: translateY(-2px);
 }
 
-/* Tactile scale-down on instant press (§1) */
 .button-primary:active,
 .button:active,
 button:active {
@@ -412,17 +417,17 @@ button:active {
 
 .button-primary-outline {
   color: var(--foreground) !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
   font-family: var(--font-sans) !important;
   font-weight: 500 !important;
   font-size: 14px !important;
   letter-spacing: -0.01em !important;
   padding: 11px 20px !important;
   border-radius: var(--radius-full) !important;
-  box-shadow: var(--shadow-sm) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
   transition: all 0.2s var(--spring-damp) !important;
   text-decoration: none !important;
   display: inline-flex !important;
@@ -432,9 +437,11 @@ button:active {
 }
 
 .button-primary-outline:hover {
-  background-color: #f5f5f7 !important;
-  border-color: rgba(0, 0, 0, 0.2) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: #ffffff !important;
   color: var(--foreground) !important;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07), inset 0 1px 1px #ffffff !important;
+  transform: translateY(-1px);
 }
 
 .button-primary-outline:active {
@@ -442,12 +449,11 @@ button:active {
   transition: transform 100ms var(--spring-fast) !important;
 }
 
-/* Suppress obsolete lines */
 .button-jerry-line {
   display: none !important;
 }
 
-/* 6. Form Fields (Apple Input Craft) */
+/* 6. Form Fields (Glassmorphic Inputs) */
 .form-wrap {
   position: relative !important;
   margin-bottom: 16px !important;
@@ -460,7 +466,7 @@ button:active {
   display: block !important;
   margin-bottom: 6px !important;
   font-size: 13px !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: var(--foreground) !important;
   opacity: 1 !important;
   line-height: 1.3 !important;
@@ -471,23 +477,25 @@ button:active {
   position: static !important;
   display: block !important;
   width: 100% !important;
-  height: 44px !important;
-  padding: 10px 14px !important;
-  background: #ffffff !important;
-  border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  border-radius: 11px !important;
+  height: 46px !important;
+  padding: 11px 16px !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.85) !important;
+  border-radius: 12px !important;
   color: var(--foreground) !important;
   font-size: 14px !important;
   font-family: var(--font-sans) !important;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03) !important;
-  transition: border-color 0.2s var(--spring-damp), box-shadow 0.2s var(--spring-damp);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03), 0 2px 8px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.2s var(--spring-damp);
 }
 
 .form-wrap .form-input:focus {
+  background: rgba(255, 255, 255, 0.95) !important;
   border-color: var(--ring) !important;
   outline: none !important;
-  background: #ffffff !important;
-  box-shadow: 0 0 0 3.5px rgba(0, 113, 227, 0.15) !important;
+  box-shadow: 0 0 0 3.5px rgba(0, 113, 227, 0.18), inset 0 1px 2px rgba(0, 0, 0, 0.02) !important;
 }
 
 .form-wrap .form-input::placeholder {
@@ -514,11 +522,6 @@ button:active {
 }
 
 /* 8. Cross-Device Responsiveness (Mobile, Tablet, Desktop) */
-html, body, .page {
-  overflow-x: hidden !important;
-  max-width: 100vw !important;
-}
-
 img {
   max-width: 100%;
 }
@@ -537,7 +540,7 @@ img {
   }
 }
 
-/* 9. Accessibility (§14 - Reduced Motion & Reduced Transparency) */
+/* 9. Accessibility (Reduced Motion & Reduced Transparency) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -550,7 +553,8 @@ img {
 @media (prefers-reduced-transparency: reduce) {
   .rd-navbar-fixed .rd-navbar-panel,
   .rd-navbar-fixed .rd-navbar-nav-wrap,
-  .button-primary-outline {
+  .button-primary-outline,
+  .form-wrap .form-input {
     background: #ffffff !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;

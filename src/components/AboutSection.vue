@@ -98,8 +98,8 @@
 <style scoped>
 .about-section {
   position: relative;
-  background-color: var(--muted);
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .section-heading {
@@ -127,22 +127,26 @@
   row-gap: 24px;
 }
 
-/* Visual Photo Proof Cards */
+/* Glassmorphic Photo Proof Cards */
 .trust-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp);
-  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp), border-color 0.25s ease;
+  box-shadow: 0 8px 30px rgba(31, 38, 135, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 .trust-card:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 1);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 16px 40px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .trust-img-box {
@@ -170,14 +174,15 @@
   top: 14px;
   left: 14px;
   padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-full);
   font-size: 11px;
   font-weight: 700;
   color: var(--foreground);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   letter-spacing: -0.01em;
 }
 
@@ -223,19 +228,21 @@
   flex-shrink: 0;
 }
 
-/* Bottom CTA Banner with Apple Refined Depth (§12) */
+/* Bottom Glassmorphic CTA Banner */
 .trust-cta-banner {
   margin-top: 40px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px) saturate(190%);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-lg);
   padding: 26px 30px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   transition: box-shadow 0.25s var(--spring-damp);
 }
 
 .trust-cta-banner:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 14px 40px rgba(0, 113, 227, 0.1), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .cta-banner-title {

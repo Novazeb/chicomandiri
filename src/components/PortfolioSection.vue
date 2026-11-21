@@ -233,8 +233,8 @@ function closeModal() {
 <style scoped>
 .portfolio-section {
   position: relative;
-  background-color: var(--muted);
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .section-heading {
@@ -258,7 +258,7 @@ function closeModal() {
   margin: 0 auto;
 }
 
-/* Category Filter Pills (Apple Segmented Style) */
+/* Category Filter Pills (Glassmorphic) */
 .portfolio-filters-wrap {
   display: flex;
   justify-content: center;
@@ -271,10 +271,13 @@ function closeModal() {
 .portfolio-filter-nav {
   display: inline-flex;
   gap: 6px;
-  background: var(--secondary);
-  padding: 4px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 5px;
   border-radius: var(--radius-full);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.95);
 }
 
 .filter-pill-btn {
@@ -303,32 +306,36 @@ function closeModal() {
 }
 
 .filter-active {
-  background: #ffffff !important;
-  color: var(--foreground) !important;
+  background: linear-gradient(135deg, #0071e3 0%, #0056b3 100%) !important;
+  color: #ffffff !important;
   font-weight: 600 !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 4px 14px rgba(0, 113, 227, 0.35) !important;
 }
 
-/* Photo Gallery Grid */
+/* Glassmorphic Photo Gallery Grid */
 .gallery-grid {
   row-gap: 24px;
 }
 
 .gallery-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp);
+  box-shadow: 0 8px 30px rgba(31, 38, 135, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp), border-color 0.25s ease;
 }
 
 .gallery-card:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 1);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 18px 45px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .gallery-photo-box {
@@ -365,15 +372,16 @@ function closeModal() {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 5px 11px;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-full);
   font-size: 11px;
   font-weight: 600;
   color: var(--foreground);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .gallery-overlay-hint {
@@ -384,12 +392,13 @@ function closeModal() {
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  background: rgba(29, 29, 31, 0.78);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(20, 25, 35, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: var(--radius-full);
   font-size: 11px;
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -438,23 +447,26 @@ function closeModal() {
 /* Custom Banner below gallery */
 .portfolio-custom-banner {
   margin-top: 48px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(18px) saturate(190%);
+  -webkit-backdrop-filter: blur(18px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-lg);
   padding: 28px 32px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   transition: box-shadow 0.25s var(--spring-damp);
 }
 
 .portfolio-custom-banner:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 14px 40px rgba(0, 113, 227, 0.1), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .custom-banner-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
-  background: rgba(0, 113, 227, 0.08);
+  border-radius: 14px;
+  background: rgba(0, 113, 227, 0.09);
+  border: 1px solid rgba(0, 113, 227, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -507,9 +519,9 @@ function closeModal() {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   z-index: 2000;
   display: flex;
   align-items: center;
@@ -519,12 +531,15 @@ function closeModal() {
 
 .modal-dialog-box {
   position: relative;
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: var(--radius-xl);
   overflow: hidden;
   max-width: 720px;
   width: 100%;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 1);
   display: flex;
   flex-direction: column;
 }
@@ -537,7 +552,7 @@ function closeModal() {
   height: 36px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.6);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -565,8 +580,8 @@ function closeModal() {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: var(--card);
-  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
 }
 
 .modal-project-title {
