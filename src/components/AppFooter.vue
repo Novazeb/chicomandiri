@@ -34,9 +34,12 @@
 
 <style scoped>
 .site-footer {
-  background-color: var(--muted);
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
   padding: 48px 0 42px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.02);
   color: var(--foreground);
 }
 
@@ -57,7 +60,7 @@
   height: 42px;
   object-fit: contain;
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 .footer-brand-title {
@@ -104,20 +107,24 @@
   font-size: 13.5px;
   color: var(--muted-foreground);
   text-decoration: none;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.95);
   transition: all 0.2s var(--spring-damp);
   line-height: 1.5;
 }
 
 .footer-wa-link:hover,
 .footer-address-link:hover {
-  color: var(--foreground);
-  background: #ffffff;
-  border-color: rgba(0, 0, 0, 0.16);
-  box-shadow: var(--shadow-sm);
+  color: var(--primary);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.12), inset 0 1px 1px #ffffff;
+  transform: translateY(-1px);
 }
 
 .footer-wa-link:active,
@@ -140,7 +147,7 @@
   .footer-wa-link,
   .footer-address-link {
     font-size: 12.5px;
-    padding: 8px 12px;
+    padding: 8px 14px;
     width: 100%;
     max-width: 320px;
   }

@@ -128,8 +128,8 @@ const services = [
 <style scoped>
 .services-section {
   position: relative;
-  background-color: var(--background);
-  border-bottom: 1px solid var(--border);
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .services-heading {
@@ -157,22 +157,26 @@ const services = [
   row-gap: 28px;
 }
 
-/* Service Card: Apple Squircle + Visual-first */
+/* Glassmorphic Service Card */
 .service-card {
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: var(--radius-xl);
   overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp);
+  box-shadow: 0 8px 30px rgba(31, 38, 135, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+  transition: transform 0.25s var(--spring-damp), box-shadow 0.25s var(--spring-damp), border-color 0.25s ease;
 }
 
 .service-card:hover {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(255, 255, 255, 1);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 18px 45px rgba(0, 113, 227, 0.12), inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 .service-photo-wrap {
@@ -206,14 +210,15 @@ const services = [
   top: 14px;
   left: 14px;
   padding: 5px 12px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: var(--radius-full);
   font-size: 11px;
   font-weight: 700;
   color: var(--foreground);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
 .service-photo-tag {
@@ -224,13 +229,14 @@ const services = [
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  background: rgba(29, 29, 31, 0.82);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(20, 25, 35, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: var(--radius-full);
   font-size: 11px;
   font-weight: 600;
   color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .service-content {
